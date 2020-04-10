@@ -1,4 +1,8 @@
-# FabianaUtils
+# Fabiana Utils
+
+Decidi reunir em um unico lugar exemplos que podem me ser uteis, existem componentes, shared, e exemplos funcionais de situações que passei nos ultimos anos em diversos tipos de projetos.
+
+# Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
