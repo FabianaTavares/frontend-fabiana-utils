@@ -1,0 +1,8 @@
+<div class="alert-edit alert-edit-info class-alert-info{{class}}">
+  <div [innerHTML]="text"></div>
+  <div *ngIf="url">
+    <a target="_blank" [href]="url" class="alert-link">
+      {{ textoLink }}
+    </a>
+  </div>
+</div>
