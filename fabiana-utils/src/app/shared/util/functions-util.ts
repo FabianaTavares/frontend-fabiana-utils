@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from "@angular/common/http";
-
+import { FormGroup } from "@angular/forms";
+import * as $ from 'jquery';
 
 declare global {
   interface ArrayConstrutor {
@@ -7,19 +8,25 @@ declare global {
     Array<T>;
   }
 }
-Array.create = (callback, count = 1) => {
+/* Array.create=(callback, count =1) => {
   const lista = [];
   if(callback){
-    for (let index = 0; index < count; index++){
+    for (let index =0; index<count; index++){
       lista.push(callback(index));
     }
   }
   return lista;
-};
+} */
 
 export function removeDuplicatedArray<T>(array: Array<T>, key: string): Array<T> {
   const novoArray = new Set();
   return array.filter(obj => !novoArray.has(obj[key]) && novoArray.add(obj[key]));
+}
+
+export function ativarMensagemErros(form: FormGroup): void {
+  Object.keys(form.controls).forEach(ctrl => {
+    form.get(ctrl).updateValueAndValidity();
+  })
 }
 
 export function divideNumberTel(numero: string): [string, string] {

@@ -11,6 +11,7 @@ import { SplitCommaPipe } from './split-comma/split-comma.pipe';
 import { TrueFalsePipe } from './true-false/true-false.pipe';
 import { TrucaTextoPipe } from './trunca-texto/truca-texto.pipe';
 import { ZeroEsquerdaPipe } from './zero-esquerda/zero-esquerda.pipe';
+import { EnumTradutorPipe } from './enum-tradutor/enum-tradutor.pipe';
 
 const PIPES = [
   AtivoInativoPipe,
@@ -23,7 +24,8 @@ const PIPES = [
   SplitCommaPipe,
   TrueFalsePipe,
   TrucaTextoPipe,
-  ZeroEsquerdaPipe
+  ZeroEsquerdaPipe,
+  EnumTradutorPipe
 ]
 
 @NgModule({

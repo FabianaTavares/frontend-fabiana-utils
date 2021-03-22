@@ -1,8 +1,47 @@
 <app-container titulo="Fabiana Testes" subtitulo="subtituloTeste">
   <p>cadastrar-perfil works!</p>
 
-  <app-barra-acoes>
+  <span class="badge">
+    Testes Tradutor: {{status | simNaoTradutor }}
+  </span>
 
-    <button type="button" class="btn btn-primary">Primary</button>
+  <div class="container mb-5 d-block">
+    <p>TESTE ABAS</p>
+    <app-abas [path]='path'></app-abas>
+  </div>
+
+  <form [formGroup]="formTeste">
+    <div class="row mb-3">
+      <div class="col-md-2">
+        <label class="control-label" for="input-documento-pessoa">CPF</label>
+      </div>
+      <div class="col-md-4">
+        <app-input [exibirApenasValidadors]="['cpfCnpj', 'required']"
+          [mensagemToValidators]="[{'cpfCnpj':'CPF/CNPJ inválido.'}]">
+          <input appCpfCnpjMask maxlength="18" type="text" name="CPF/CNPJ" id="input-documento-pessoa" class="form-control" formControlName="documento">
+        </app-input>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-2">
+        <label class="control-label" for="input-telefone-pessoa">
+          Telefone</label>
+      </div>
+      <div class="col-md-4">
+        <app-input [exibirApenasValidadors]="['phone', 'required']"
+        >
+          <input appTelefone maxlength="15" type="text" name="Telefone" id="input-telefone-pessoa" class="form-control" formControlName="telefone">
+        </app-input>
+      </div>
+    </div>
+  </form>
+
+  <app-barra-acoes>
+  <button type="button" class="btn btn-success" (click)="salvar()">Salvar</button>
+  <button type="button" class="btn btn-danger" (click)="cancelar()">Cancelar</button>
+    <button type="button" class="btn btn-primary" (click)="abriModal()">teste modal</button>
   </app-barra-acoes>
+
+  <!-- <app-paginacao [pageIndex]="itensPorPagina.page" [totalItems]="resultadoConsulta?.totalRegistros"
+  [totalItemsPage]="itensPorPagina.itemsPerPage" (consultarPagina)="executarPesquisa($event)"></app-paginacao> -->
 </app-container>

@@ -6,7 +6,15 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: 'cadastrar-perfil',
-    component: CadastrarPerfilComponent
+    component: CadastrarPerfilComponent,
+    data: {
+      breadcrumb: [
+        {
+          titulo: 'cadastro-perfil',
+          link: 'Teste'
+        }
+      ]
+    }
   }
 ];
 

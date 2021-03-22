@@ -1,0 +1,124 @@
+.project-menu {
+  margin-bottom: 20px;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+.project-menu li {
+  text-decoration: none;
+  color: blue;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.project-menu .active {
+  background-color: antiquewhite;
+}
+
+.project-menu li {
+  text-align: center;
+  padding: 12px;
+  border-bottom: 2px solid transparent;
+}
+
+.project-menu a {
+  flex-grow: 1;
+  text-decoration: none;
+}
+
+.project-menu li:hover {
+  border-bottom: 2px solid gray;
+}
+
+.project-menu .active li:hover {
+  cursor: default;
+  border-bottom: 2px solid transparent;
+}
+
+.nav {
+  display: block;
+}
+
+.nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav > li {
+  position: relative;
+  display: block;
+}
+
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+
+.nav > li.disabled > a {
+  color: #777;
+}
+
+.nav > li.disabled > a:hover,
+.nav > li.disabled > a:focus {
+  color: #777;
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+
+.nav .open > a,
+.nav .open>a:hover,
+.nav .open>a:focus {
+  background-color: #eee;
+  border-color: blueviolet;
+}
+
+.nav .nav-divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: aliceblue;
+}
+
+.nav > li > a > img {
+  max-width: none;
+}
+
+.nav-justified {
+  width: 100%;
+}
+
+.nav-justified > li {
+  float: none;
+}
+
+.nav-justified > li > a {
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.nav-justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  flex: 1 1 25%;
+  text-align: center;
+}
+
+.espaco-icone {
+  padding-right: 10px;
+}

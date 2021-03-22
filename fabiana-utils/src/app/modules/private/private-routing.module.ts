@@ -32,6 +32,11 @@ const routes: Routes = [
         path: 'teste',
         data: {
           preload: true,
+          breadcrumb: [
+            {
+              titulo: 'CAdastro TESTE Breadcrumb'
+            }
+          ]
         },
         loadChildren: () => import('./modules/cadastros/cadastros.module').then(m => m.CadastrosModule),
         //canActivate: [PrivateGuardService]

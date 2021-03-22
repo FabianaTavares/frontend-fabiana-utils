@@ -17,6 +17,12 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BreadcrumbObserver } from './breadcrumb/services/breadcrumb.observer';
 import { BarraAcoesComponent } from './barra-acoes/barra-acoes.component';
+import { PaginacaoComponent } from './paginacao/paginacao.component';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { SistemaModalModule } from '../modules/sistema-modal/sistema-modal.module';
+import { AbasComponent } from './abas/abas.component';
+import { ItemAbaComponent } from './abas/item-aba/item-aba.component';
+import { InputComponent } from './input/input.component';
 
 
 
@@ -28,7 +34,9 @@ import { BarraAcoesComponent } from './barra-acoes/barra-acoes.component';
     FormsModule,
     ReactiveFormsModule,
     DirectivesModule,
-    PipesModule
+    PipesModule,
+    PaginationModule.forRoot(),
+    SistemaModalModule
   ],
   entryComponents: [
     ModalConfirmarComponent,
@@ -49,6 +57,10 @@ import { BarraAcoesComponent } from './barra-acoes/barra-acoes.component';
     HeaderComponent,
     FooterComponent,
     BarraAcoesComponent,
+    PaginacaoComponent,
+    AbasComponent,
+    ItemAbaComponent,
+    InputComponent,
   ],
   exports: [
     AlertInfoComponent,
@@ -63,7 +75,11 @@ import { BarraAcoesComponent } from './barra-acoes/barra-acoes.component';
     ContainerComponent,
     HeaderComponent,
     FooterComponent,
-    BarraAcoesComponent
+    BarraAcoesComponent,
+    PaginacaoComponent,
+    AbasComponent,
+    ItemAbaComponent,
+    InputComponent,
   ],
   providers: [
     BreadcrumbService,

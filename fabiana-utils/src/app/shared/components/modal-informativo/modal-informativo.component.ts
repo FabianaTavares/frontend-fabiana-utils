@@ -1,5 +1,5 @@
 import { BsModalRef } from 'ngx-bootstrap/modal';
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-modal-informativo',
@@ -9,7 +9,7 @@ import { Component, EventEmitter, OnInit } from '@angular/core';
 export class ModalInformativoComponent implements OnInit {
 
   mensagem: string;
-  txtBtn: 'OK';
+  @Input() public txtBtn = 'okkkkkkkkkkkkk';
 
   confirmarEvt: EventEmitter<boolean> = new EventEmitter();
 

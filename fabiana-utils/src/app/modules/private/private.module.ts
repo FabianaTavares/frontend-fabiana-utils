@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { DirectivesModule } from './../../shared/directives/directives.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -12,6 +13,7 @@ import { PrivateGuardService } from './guards/private-guard.service';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { ProjetoUtilsAdminComponent } from './components/projeto-utils-admin/projeto-utils-admin.component';
+import { SistemaModalModule } from 'src/app/shared/modules/sistema-modal/sistema-modal.module';
 
 
 @NgModule({
@@ -23,6 +25,7 @@ import { ProjetoUtilsAdminComponent } from './components/projeto-utils-admin/pro
     CommonModule,
     PrivateRoutingModule,
     RouterModule,
+    ReactiveFormsModule,
     ComponentsModule,
     PipesModule,
     TooltipModule.forRoot(),
@@ -33,6 +36,7 @@ import { ProjetoUtilsAdminComponent } from './components/projeto-utils-admin/pro
       confirmText: 'Sim',
       cancelText: 'Não'
     }),
+    SistemaModalModule
 
   ],
   providers: [
