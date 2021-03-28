@@ -1,0 +1,6 @@
+<div class="cabecalho" *ngIf="!esconderCabecalho">
+  <a class="btn btn-primary pull-right ng-scope btn-editar" (click)='habilitarEdicao()'> {{ botaoEditar ? botaoEditar : 'Editar' }} </a>
+</div>
+<div class="conteudo">
+  <ng-content select="[conteudo]"></ng-content>
+</div>

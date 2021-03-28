@@ -1,0 +1,11 @@
+<div class="conteudo">
+  <ng-content select="[conteudo]"></ng-content>
+</div>
+<div class="painel-botoes">
+  <button class="btn btn-success" [disabled]="desabilitarBtnSalvar" (click)="salvarEdicao()">
+    {{ botaoSalvar ? botaoSalvar : 'Salvar' }}
+  </button>
+   <button *ngIf="!esconderCancelar" class="btn btn-default btn-cancelar mr-1" (click)="cancelarEdicao()">
+     Cancelar
+  </button>
+</div>

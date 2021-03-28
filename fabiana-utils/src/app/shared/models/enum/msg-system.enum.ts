@@ -18,7 +18,7 @@ export enum MsgSystemEnum {
   MSG_INATERVALO_DATA_INVALIDO = 'A Data inicial precisa ser menor que a final',
   MSG_DATA_INICIAL_MENOR_ATUAL = 'A Data inicial não pode ser menor que a Data Atual',
   MSG_TAMANHO_CARACTERES_CPF_CNPJ = 'Número CPF/CNPJ inválido.',
-
+  INDEFERIDO = 'indeferido',
 
 
 }

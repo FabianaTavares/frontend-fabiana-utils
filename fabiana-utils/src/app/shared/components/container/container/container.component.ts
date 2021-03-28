@@ -8,9 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ContainerComponent implements OnInit {
 
   @Input() mb: string;
-  @Input() titulo: string;
+  /* @Input() titulo: string;
   @Input() subtitulo: string;
-
+ */
   constructor() { }
 
   ngOnInit(): void {

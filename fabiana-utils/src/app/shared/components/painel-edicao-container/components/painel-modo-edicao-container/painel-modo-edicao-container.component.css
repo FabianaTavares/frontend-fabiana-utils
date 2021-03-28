@@ -1,0 +1,67 @@
+.painel-botoes {
+  overflow: auto;
+  font-size: 0.75;
+}
+
+.painel-botoes button {
+  float: right;
+  font-size: 1rem;
+  text-transform: none;
+  font-weight: normal;
+}
+
+.btn-geral {
+  font-size: 0.875rem impor !important
+}
+
+.btn-cancelar {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc !important;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: none;
+}
+
+.btn-cancelar:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+
+.btn {
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  border: solid 1px transparent;
+  border-radius: 4px;
+  text-transform: none;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  font-family: Arial,
+  Helvetica,
+  sans-serif;
+  text-transform: none;
+  min-width: max-content;
+}
+
+.btn-success:hover {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+  min-width: max-content;
+}

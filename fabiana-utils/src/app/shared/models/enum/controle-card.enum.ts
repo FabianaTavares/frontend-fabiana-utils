@@ -1,6 +1,6 @@
 export enum ControleCardEnum {
-  BOTAO,
   FORM,
   INFO,
-  ANALISE
+  ANALISE,
+  BOTAO
 }

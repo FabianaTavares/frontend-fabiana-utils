@@ -17,8 +17,8 @@ export class TelefoneMaskDirective {
   value: any;
   private regexApplyTelefone: StringMask;
   private regexApplyTelefoneDigito: StringMask;
-  private readonly tamanhoTelefoneSemNove = 11;
-  private readonly tamanhoTelefoneComNove = 14;
+  private readonly tamanhoTelefoneSemNove = 10;
+  private readonly tamanhoTelefoneComNove = 11;
   private digitoBackspace = 8;
 
   constructor(

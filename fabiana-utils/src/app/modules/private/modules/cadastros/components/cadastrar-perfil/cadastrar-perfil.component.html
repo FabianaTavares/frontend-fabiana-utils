@@ -1,14 +1,19 @@
 <app-container titulo="Fabiana Testes" subtitulo="subtituloTeste">
   <p>cadastrar-perfil works!</p>
-
-  <span class="badge">
-    Testes Tradutor: {{status | simNaoTradutor }}
+  Testes Tradutor:
+  <span class="badge" [appStatusBadge]="status">
+    {{status | simNaoTradutor }}
   </span>
 
-  <div class="container mb-5 d-block">
+  <span class="badge">
+
+    Telefone: {{ telefoneTeste | telefone }}
+  </span>
+
+  <!-- <div class="container mb-5 d-block">
     <p>TESTE ABAS</p>
     <app-abas [path]='path'></app-abas>
-  </div>
+  </div> -->
 
   <form [formGroup]="formTeste">
     <div class="row mb-3">
@@ -28,13 +33,13 @@
           Telefone</label>
       </div>
       <div class="col-md-4">
-        <app-input [exibirApenasValidadors]="['phone', 'required']"
-        >
-          <input appTelefone maxlength="15" type="text" name="Telefone" id="input-telefone-pessoa" class="form-control" formControlName="telefone">
+        <app-input [exibirApenasValidadors]="['phone', 'required']">
+          <input appTelefoneMask maxlength="15" type="text" name="Telefone" id="input-telefone-pessoa" class="form-control" formControlName="telefone">
         </app-input>
       </div>
     </div>
   </form>
+
 
   <app-barra-acoes>
   <button type="button" class="btn btn-success" (click)="salvar()">Salvar</button>
@@ -44,4 +49,14 @@
 
   <!-- <app-paginacao [pageIndex]="itensPorPagina.page" [totalItems]="resultadoConsulta?.totalRegistros"
   [totalItemsPage]="itensPorPagina.itemsPerPage" (consultarPagina)="executarPesquisa($event)"></app-paginacao> -->
+
+    <div class="row">
+      <label>Download:</label>
+      <button (click)="downloadPdf('1')">Download PDF</button>
+    </div>
+
+    <!-- <app-adicionar-botao ($adicionar)="trocarCard(controleCardEnum.FORM)"
+    texto="adicione dados" textoBtn="adicionar dados">
+    </app-adicionar-botao> -->
+
 </app-container>

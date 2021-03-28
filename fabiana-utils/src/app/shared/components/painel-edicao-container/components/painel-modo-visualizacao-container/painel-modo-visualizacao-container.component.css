@@ -1,0 +1,20 @@
+.cabecalho {
+  padding: 0.34rem;
+  overflow: auto;
+}
+
+.cabecalho a {
+  color: #fff;
+  float: right;
+  overflow: auto;
+  font-size: 0.75rem;
+  text-transform: none;
+}
+
+.btn-editar {
+  padding: 1px 5px 1px 5px;
+}
+
+.conteudo {
+  padding: 1rem;
+}

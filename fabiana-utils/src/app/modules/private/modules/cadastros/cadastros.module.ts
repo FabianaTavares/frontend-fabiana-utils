@@ -1,3 +1,4 @@
+import { DirectivesModule } from './../../../../shared/directives/directives.module';
 import { PipesModule } from './../../../../shared/pipes/pipes.module';
 import { CadastrarPerfilComponent } from './components/cadastrar-perfil/cadastrar-perfil.component';
 import { ComponentsModule } from './../../../../shared/components/components.module';
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     CadastrosRoutingModule,
     ComponentsModule,
-    PipesModule
+    PipesModule,
+    DirectivesModule
   ]
 })
 export class CadastrosModule { }

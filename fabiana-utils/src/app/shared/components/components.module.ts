@@ -23,7 +23,10 @@ import { SistemaModalModule } from '../modules/sistema-modal/sistema-modal.modul
 import { AbasComponent } from './abas/abas.component';
 import { ItemAbaComponent } from './abas/item-aba/item-aba.component';
 import { InputComponent } from './input/input.component';
-
+import { AdicionarBotaoComponent } from './adicionar-botao/adicionar-botao.component';
+import { PainelEdicaoContainerSimplesComponent } from './painel-edicao-container/components/painel-edicao-container-simples/painel-edicao-container-simples.component';
+import { PainelModoEdicaoContainerComponent } from './painel-edicao-container/components/painel-modo-edicao-container/painel-modo-edicao-container.component';
+import { PainelModoVisualizacaoContainerComponent } from './painel-edicao-container/components/painel-modo-visualizacao-container/painel-modo-visualizacao-container.component';
 
 
 @NgModule({
@@ -61,6 +64,10 @@ import { InputComponent } from './input/input.component';
     AbasComponent,
     ItemAbaComponent,
     InputComponent,
+    AdicionarBotaoComponent,
+    PainelEdicaoContainerSimplesComponent,
+    PainelModoEdicaoContainerComponent,
+    PainelModoVisualizacaoContainerComponent,
   ],
   exports: [
     AlertInfoComponent,
@@ -80,6 +87,10 @@ import { InputComponent } from './input/input.component';
     AbasComponent,
     ItemAbaComponent,
     InputComponent,
+    AdicionarBotaoComponent,
+    PainelEdicaoContainerSimplesComponent,
+    PainelModoEdicaoContainerComponent,
+    PainelModoVisualizacaoContainerComponent
   ],
   providers: [
     BreadcrumbService,

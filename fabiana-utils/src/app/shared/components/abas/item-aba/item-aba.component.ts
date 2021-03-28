@@ -52,7 +52,7 @@ export class ItemAbaComponent implements OnInit, OnDestroy, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if(changes && changes.aba) {
-      console.log(this.route);
+
       this.verificarAba(this.route.firstChild.routeConfig.path);
       this.verificarEstado();
     }

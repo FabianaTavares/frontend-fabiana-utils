@@ -1,3 +1,4 @@
+import { ReqService } from './../../../../../../shared/services/services/req.service';
 import { ValidacaoFormsValidators } from './../../../../../../shared/validators/functions-valid.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SistemaModalService } from './../../../../../../shared/modules/sistema-modal/services/sistema-modal.service';
@@ -6,6 +7,8 @@ import { BreadcrumbService } from './../../../../../../shared/components/breadcr
 import { Component, OnInit } from '@angular/core';
 import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 import { ativarMensagemErros } from 'src/app/shared/util/functions-util';
+import { criaUrlDownloadAnexo } from 'src/app/shared/models/interface/anexo-funcoes.model';
+import { ControleCardEnum } from 'src/app/shared/models/enum/controle-card.enum';
 
 @Component({
   selector: 'app-cadastrar-perfil',
@@ -22,17 +25,28 @@ export class CadastrarPerfilComponent implements OnInit {
   status: any;
   path: string;
   formTeste: FormGroup;
+  telefoneTeste: string;
+  id: number;
+
+  tipoCard: ControleCardEnum = ControleCardEnum.BOTAO;
+  controleCardEnum: ControleCardEnum;
+
 
   constructor(
     private fb: FormBuilder,
     private breadcrumbService: BreadcrumbService,
-    private sistemaModalService: SistemaModalService
-  ) { }
+    private sistemaModalService: SistemaModalService,
+    private req: ReqService
+  ) {
+    //this.tipoCard = this.controleCardEnum.BOTAO;
+    //this.tipoCard = ControleCardEnum.BOTAO;
+  }
 
   ngOnInit(): void {
     setTimeout(() => { this.breadcrumbService.listarRotas(); });
     this.criarFormulario();
     this.status = "N";
+    this.telefoneTeste = '3133541101';
     this.path = '/rota-teste';
   }
 
@@ -91,6 +105,21 @@ export class CadastrarPerfilComponent implements OnInit {
     this.sistemaModalService.openModalInfo('TESTESSS').subscribe();
   }
 
+  downloadPdf(id: number | string){
+    //chama o serviço e no retorno baixa;
+    this.req.geraDocumento(this.id).subscribe(
+      (res) => {
+        criaUrlDownloadAnexo(res);
+      }
+    )
+  }
+
+  trocarCard(tipoCard: ControleCardEnum){
+    if(tipoCard === ControleCardEnum.BOTAO){
+      return null;
+    }
+    this.tipoCard = tipoCard;
+  }
 
 
 }
