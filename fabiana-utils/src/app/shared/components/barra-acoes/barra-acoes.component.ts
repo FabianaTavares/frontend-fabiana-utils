@@ -12,4 +12,5 @@ export class BarraAcoesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }
