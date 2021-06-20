@@ -1,13 +1,8 @@
 {
   "name": "fabiana-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "release": "standard-version"
   },
   "private": true,
   "dependencies": {
@@ -70,8 +65,5 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "scripts": {
-    "release": "standard-version"
   }
 }
