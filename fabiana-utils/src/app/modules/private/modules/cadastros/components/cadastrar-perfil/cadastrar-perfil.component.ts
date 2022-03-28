@@ -30,7 +30,8 @@ export class CadastrarPerfilComponent implements OnInit {
 
   tipoCard: ControleCardEnum = ControleCardEnum.BOTAO;
   controleCardEnum: ControleCardEnum;
-
+  isValidacoesSnackbarVisible: boolean = false;
+  infoText: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -50,17 +51,17 @@ export class CadastrarPerfilComponent implements OnInit {
     this.path = '/rota-teste';
   }
 
-  criarFormulario(){
+  criarFormulario() {
     this.formTeste = this.fb.group({
-      documento: [null, [Validators.required, ValidacaoFormsValidators.validaCpfCnpj]],
+      cpfCnpj: [null, [Validators.required]],
       telefone: [null, [Validators.required, ValidacaoFormsValidators.validaTelefone]]
     });
   }
 
-  salvar(){
+  salvar() {
     ativarMensagemErros(this.formTeste);
 
-    if(this.formTeste.valid){
+    if (this.formTeste.valid) {
       alert('oi');
       /*  this.serviceCadastrarPerfil.salvarPerfil(this.formTeste).subscribe((response) => {
 
@@ -68,13 +69,14 @@ export class CadastrarPerfilComponent implements OnInit {
     }
   }
 
-  cancelar(){
+  cancelar() {
     this.formTeste.reset();
   }
 
-  executarPesquisa(pagina?){
+  executarPesquisa(pagina?) {
     pagina ? this.itensPorPagina.page = pagina : this.itensPorPagina = {
-      page: 1, itemsPerPage: 10 };
+      page: 1, itemsPerPage: 10
+    };
     this.filtroAcionado = true;
 
     this.pesquisaTeste = this.mapearPesquisa(this.itensPorPagina.page);
@@ -101,11 +103,11 @@ export class CadastrarPerfilComponent implements OnInit {
     return params;
   }
 
-  abriModal(){
+  abriModal() {
     this.sistemaModalService.openModalInfo('TESTESSS').subscribe();
   }
 
-  downloadPdf(id: number | string){
+  downloadPdf(id: number | string) {
     //chama o serviço e no retorno baixa;
     this.req.geraDocumento(this.id).subscribe(
       (res) => {
@@ -114,12 +116,21 @@ export class CadastrarPerfilComponent implements OnInit {
     )
   }
 
-  trocarCard(tipoCard: ControleCardEnum){
-    if(tipoCard === ControleCardEnum.BOTAO){
+  trocarCard(tipoCard: ControleCardEnum) {
+    if (tipoCard === ControleCardEnum.BOTAO) {
       return null;
     }
     this.tipoCard = tipoCard;
   }
 
+  mostrarEfeitoMsg() {
+    console.log('mostra');
+    this.isValidacoesSnackbarVisible = true;
+    this.infoText = "Não foi possível carregar o arquivo."
+  }
 
+  esconderEfeitoMsg() {
+    console.log('escfonde');
+    this.isValidacoesSnackbarVisible = false;
+  }
 }

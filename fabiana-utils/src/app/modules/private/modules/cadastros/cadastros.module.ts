@@ -8,7 +8,6 @@ import { CommonModule } from '@angular/common';
 import { CadastrosRoutingModule } from './cadastros-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     CadastrarPerfilComponent

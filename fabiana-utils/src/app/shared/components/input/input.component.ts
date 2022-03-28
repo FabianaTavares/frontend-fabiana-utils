@@ -1,8 +1,9 @@
-import { InputContainerDefault } from './models/input-container-const.model';
-import { Subscription } from 'rxjs';
 import { AfterViewInit, Component, ContentChild, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormControlName } from '@angular/forms';
+import { Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
+
+import { InputContainerDefault } from './models/input-container-const.model';
 
 @Component({
   selector: 'app-input',
@@ -160,8 +161,8 @@ export class InputComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   private removeClass(element, classStr: string){
-    if(element != null && !element.classList.contains(classStr)){
-      element.classList.add(classStr);
+    if(element != null && element.classList.contains(classStr)){
+      element.classList.remove(classStr);
     }
   }
 

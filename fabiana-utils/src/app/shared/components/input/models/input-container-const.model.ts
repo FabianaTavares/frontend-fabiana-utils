@@ -2,7 +2,7 @@ export const InputContainerDefault = [
   {
     'cpfCnpj':
       'CPF/CNPJ inválido',
-    'phone':
+    'telefone':
       'Telefone inválido',
     'required':
       'Este campo é obrigatório',

@@ -6,7 +6,6 @@
   </span>
 
   <span class="badge">
-
     Telefone: {{ telefoneTeste | telefone }}
   </span>
 
@@ -18,23 +17,25 @@
   <form [formGroup]="formTeste">
     <div class="row mb-3">
       <div class="col-md-2">
-        <label class="control-label" for="input-documento-pessoa">CPF</label>
+        <label class="control-label" for="cpfCnpj">CPF</label>
       </div>
       <div class="col-md-4">
-        <app-input [exibirApenasValidadors]="['cpfCnpj', 'required']"
+        <app-input [exibirClose]=false [exibirApenasValidadors]="['cpfCnpj', 'required']"
           [mensagemToValidators]="[{'cpfCnpj':'CPF/CNPJ inválido.'}]">
-          <input appCpfCnpjMask maxlength="18" type="text" name="CPF/CNPJ" id="input-documento-pessoa" class="form-control" formControlName="documento">
+          <input appCpfCnpjMask maxlength="18" type="text" name="CPF/CNPJ" id="cpfCnpj" class="form-control"
+            formControlName="cpfCnpj">
         </app-input>
       </div>
     </div>
     <div class="row mb-3">
       <div class="col-md-2">
-        <label class="control-label" for="input-telefone-pessoa">
+        <label class="control-label" for="telefone">
           Telefone</label>
       </div>
       <div class="col-md-4">
-        <app-input [exibirApenasValidadors]="['phone', 'required']">
-          <input appTelefoneMask maxlength="15" type="text" name="Telefone" id="input-telefone-pessoa" class="form-control" formControlName="telefone">
+        <app-input [exibirApenasValidadors]="['telefone', 'required']">
+          <input appTelefoneMask maxlength="15" type="text" name="Telefone" id="telefone" class="form-control"
+            formControlName="telefone">
         </app-input>
       </div>
     </div>
@@ -42,21 +43,43 @@
 
 
   <app-barra-acoes>
-  <button type="button" class="btn btn-success" (click)="salvar()">Salvar</button>
-  <button type="button" class="btn btn-danger" (click)="cancelar()">Cancelar</button>
+    <button type="button" class="btn btn-success" (click)="salvar()">Salvar</button>
+    <button type="button" class="btn btn-danger" (click)="cancelar()">Cancelar</button>
     <button type="button" class="btn btn-primary" (click)="abriModal()">teste modal</button>
   </app-barra-acoes>
 
   <!-- <app-paginacao [pageIndex]="itensPorPagina.page" [totalItems]="resultadoConsulta?.totalRegistros"
   [totalItemsPage]="itensPorPagina.itemsPerPage" (consultarPagina)="executarPesquisa($event)"></app-paginacao> -->
 
-    <div class="row">
-      <label>Download:</label>
-      <button (click)="downloadPdf('1')">Download PDF</button>
-    </div>
+  <div class="row">
+    <label>Download:</label>
+    <button (click)="downloadPdf('1')">Download PDF</button>
+  </div>
 
-    <!-- <app-adicionar-botao ($adicionar)="trocarCard(controleCardEnum.FORM)"
+  <!-- <app-adicionar-botao ($adicionar)="trocarCard(controleCardEnum.FORM)"
     texto="adicione dados" textoBtn="adicionar dados">
     </app-adicionar-botao> -->
 
+  <div class="row mt-5">
+    <div class="col-6">
+      <div class="card">
+        <label>Teste Efeito CSS:</label>
+        <button (click)="mostrarEfeitoMsg()">mostrar</button>
+        <button (click)="esconderEfeitoMsg()">esconder</button>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-12">
+          <!-- <div class="snackbar-info" *ngIf="isValidacoesSnackbarVisible"> -->
+
+          <div class="snackbar-info" id="hideMeAfter5Seconds" *ngIf="isValidacoesSnackbarVisible">
+            <span class="snackbar-info-text">
+              <i class="fa-solid fa-stop"></i>
+              {{infoText}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </app-container>

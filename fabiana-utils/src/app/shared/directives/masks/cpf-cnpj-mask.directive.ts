@@ -26,10 +26,11 @@ export class CpfCnpjMaskDirective implements ControlValueAccessor {
   ) {
     element.nativeElement.maxLength = 18;
     this.regexApplyCpf = new StringMask('000.000.000-00');
-    this.regexApplyCpf = new StringMask('000.000.000\/0000-00')
+    this.regexApplyCnpj = new StringMask('000.000.000\/0000-00')
   }
 
   writeValue(value: any): void {
+    console.log(value);
     if(value != null){
       if(value.indexOf('.') === -1){
         if(value.length === 11){
@@ -58,10 +59,10 @@ export class CpfCnpjMaskDirective implements ControlValueAccessor {
 
   @HostListener('keyup', ['$event'])
   onKeyup($event: any){
-    const valor = this.getValueAbsoluto($event.targe.value);
+    const valor = this.getValueAbsoluto($event.target.value);
     if($event.keyCode === this.digitoBackspace){
       const CaracteresEspeciais = ['.', '/', '-'];
-      if(CaracteresEspeciais.includes($event.target.value[$event.targe.value.length - 1])){
+      if(CaracteresEspeciais.includes($event.target.value[$event.target.value.length - 1])){
         let mascaraAplicada: string;
         if(valor.length <= this.quantidadeDigitoCnpj){
           mascaraAplicada = this.regexApplyCnpj.apply(valor);

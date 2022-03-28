@@ -1,5 +1,5 @@
 import { Directive, ElementRef, forwardRef, HostListener } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import * as StringMask from 'string-mask';
 
 @Directive({
@@ -10,7 +10,7 @@ import * as StringMask from 'string-mask';
     multi: true
   }]
 })
-export class TelefoneMaskDirective {
+export class TelefoneMaskDirective implements ControlValueAccessor {
 
   onTouched: any;
   onChange: any;
@@ -30,7 +30,7 @@ export class TelefoneMaskDirective {
 
   writeValue(value: any): void {
     if(value != null){
-      if(value.indexOf('.') === -1){
+      if(value.indexOf('-') === -1){
         if(value.length === this.tamanhoTelefoneSemNove){
           this.element.nativeElement.value = this.regexApplyTelefone.apply(value);
         }else if(value.length === this.tamanhoTelefoneComNove){
@@ -55,7 +55,7 @@ export class TelefoneMaskDirective {
 
   @HostListener('keyup', ['$event'])
   onKeyup($event: any){
-    const valor = this.getValueAbsoluto($event.targe.value);
+    const valor = this.getValueAbsoluto($event.target.value);
     if($event.keyCode === this.digitoBackspace){
       if(valor.length === this.tamanhoTelefoneSemNove){
         this.aplicarMascara($event);

@@ -1,0 +1,78 @@
+.snackbar-info {
+  position: relative;
+  visibility: hidden;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  min-height: 50px;
+  margin-top: 24px;
+  background-color: rgba(17, 17, 17, 0.8);
+  border-radius: 12px;
+}
+
+#hideMeAfter5Seconds {
+  animation-name: startAnimation;
+  animation-duration: 3.8s;
+  animation-iteration-count: 1;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+
+@keyframes startAnimation {
+  0% {
+    margin-left: 100%; width: 100%;  background-color: blue; visibility: hidden;
+  }
+  20%, 80% {
+    margin-left: 0%; width: 100%; background-color: red; visibility: visible;
+  }
+  100% {
+    margin-left: 100%; width: 100%; background-color: green; visibility: visible;
+  }
+}
+
+
+
+/* #hideMeAfter5Seconds {
+  animation-name: startAnimation, stopAnimation, finishAnimation;
+  animation-duration: 400ms, 3s, 400ms;
+  animation-iteration-count: 1, 1, 2;
+  animation-direction: reverse, normal, reverse;
+  animation-fill-mode: forwards, none, forwards;
+}
+
+@keyframes startAnimation {
+  from {
+    margin-left: 100%; width: 100%;  background-color: blue; visibility: visible;
+  }
+  to {
+    margin-left: 0%; width: 100%; background-color: red; visibility: hidden;
+  }
+}
+
+@keyframes stopAnimation {
+  from {
+    margin-left: 0%; width: 100%;  background-color: green; visibility: visible;
+  }
+  to {
+    margin-left: 100%; width: 100%; background-color: green; visibility: hidden;
+  }
+
+}
+
+@keyframes finishAnimation {
+  from {
+    margin-left: 100%; width: 100%;  background-color: yellow; visibility: hidden;
+  }
+  to {
+    margin-left: 0%; width: 100%; background-color: orange; visibility: visible;
+  }
+} */
+
+.snackbar-info-text {
+  font-size: 20px;
+  line-height: 22px;
+  align-items: center;
+  color: #fff;
+  padding-left: 10px;
+}

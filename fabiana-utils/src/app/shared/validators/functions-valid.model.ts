@@ -16,7 +16,7 @@ export const ValidacaoFormsValidators = {
   validaTelefone: (control: AbstractControl) => {
     if(String(control.value).length > 0){
       if(!(/\d{10,11}/g.test(control.value))){
-        return { phone: true };
+        return { telefone: true };
       }
     }
     return null;
