@@ -23,6 +23,8 @@
     "@angular/platform-browser": "~9.1.0",
     "@angular/platform-browser-dynamic": "~9.1.0",
     "@angular/router": "~9.1.0",
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@popperjs/core": "^2.11.5",
     "angular-confirmation-popover": "^6.0.0",
     "bootstrap": "^4.4.1",
     "jquery": "^3.6.0",
