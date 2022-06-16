@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/FabianaTavares/fabiana-utils/compare/v0.0.9...v0.1.0) (2022-06-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* organizando codigo
+
+n
+
+### Funcionalidades
+
+* organizando código, menu, rotas, etc ([fc4de88](https://github.com/FabianaTavares/fabiana-utils/commit/fc4de88c6de2744d922fd0ca58ed112818087fc3))
+
 ### [0.0.9](https://github.com/FabianaTavares/fabiana-utils/compare/v0.0.8...v0.0.9) (2022-06-16)
 
 
