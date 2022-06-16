@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/FabianaTavares/fabiana-utils/compare/v0.1.1...v0.1.2) (2022-06-16)
+
+
+### Funcionalidades
+
+* criação das pastas de assets e um mock referente a status de anexos, model, interface e enum ([5563e80](https://github.com/FabianaTavares/fabiana-utils/commit/5563e801efbc6c2fd25c8bfcbec7f956038196bb))
+
 ### [0.1.1](https://github.com/FabianaTavares/fabiana-utils/compare/v0.1.0...v0.1.1) (2022-06-16)
 
 
