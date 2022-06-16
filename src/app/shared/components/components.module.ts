@@ -30,6 +30,7 @@ import { PainelModoVisualizacaoContainerComponent } from './painel-edicao-contai
 import { BadgeStatusNovoComponent } from './badge-status-novo/badge-status-novo.component';
 import { PaginacaoOpcaoNovaComponent } from './paginacao-opcao-nova/paginacao-opcao-nova.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 
 
 @NgModule({
@@ -74,6 +75,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     PainelModoVisualizacaoContainerComponent,
     BadgeStatusNovoComponent,
     PaginacaoOpcaoNovaComponent,
+    MenuLateralComponent,
   ],
   exports: [
     AlertInfoComponent,
@@ -98,7 +100,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     PainelModoEdicaoContainerComponent,
     PainelModoVisualizacaoContainerComponent,
     BadgeStatusNovoComponent,
-    PaginacaoOpcaoNovaComponent
+    PaginacaoOpcaoNovaComponent,
+    MenuLateralComponent
   ],
   providers: [
     BreadcrumbService,
