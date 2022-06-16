@@ -17,6 +17,7 @@ import { PublicModule } from './modules/public/public.module';
 import { ValidaFormModule } from './shared/modules/valida-form/valida-form.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CoreModule.forRoot(),
     ToastrModule.forRoot(), // ToastrModule added
     NgxSpinnerModule,
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(),
+    NgxPaginationModule
   ],
   providers: [
     {

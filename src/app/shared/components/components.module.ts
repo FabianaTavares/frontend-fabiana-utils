@@ -29,6 +29,7 @@ import { PainelModoEdicaoContainerComponent } from './painel-edicao-container/co
 import { PainelModoVisualizacaoContainerComponent } from './painel-edicao-container/components/painel-modo-visualizacao-container/painel-modo-visualizacao-container.component';
 import { BadgeStatusNovoComponent } from './badge-status-novo/badge-status-novo.component';
 import { PaginacaoOpcaoNovaComponent } from './paginacao-opcao-nova/paginacao-opcao-nova.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { PaginacaoOpcaoNovaComponent } from './paginacao-opcao-nova/paginacao-op
     DirectivesModule,
     PipesModule,
     PaginationModule.forRoot(),
-    SistemaModalModule
+    SistemaModalModule,
+    NgxPaginationModule
   ],
   entryComponents: [
     ModalConfirmarComponent,

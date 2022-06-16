@@ -12,6 +12,7 @@ import { TrueFalsePipe } from './true-false/true-false.pipe';
 import { TrucaTextoPipe } from './trunca-texto/truca-texto.pipe';
 import { ZeroEsquerdaPipe } from './zero-esquerda/zero-esquerda.pipe';
 import { EnumTradutorPipe } from './enum-tradutor/enum-tradutor.pipe';
+import { StatusAplPipe } from './status-apl/status-apl.pipe';
 
 const PIPES = [
   AtivoInativoPipe,
@@ -25,7 +26,8 @@ const PIPES = [
   TrueFalsePipe,
   TrucaTextoPipe,
   ZeroEsquerdaPipe,
-  EnumTradutorPipe
+  EnumTradutorPipe,
+  StatusAplPipe
 ]
 
 @NgModule({

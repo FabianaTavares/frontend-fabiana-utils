@@ -2,7 +2,16 @@
   "name": "fabiana-utils",
   "version": "0.0.9",
   "scripts": {
-    "release": "standard-version"
+    "release": "standard-version",
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build ",
+    "hml": "ng build --configuration=hml",
+    "prd": "ng build --prod",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "json-server": "json-server src/assets/database/database.js --delay 200"
   },
   "private": true,
   "dependencies": {

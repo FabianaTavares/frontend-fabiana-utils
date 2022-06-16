@@ -1,7 +1,7 @@
 <div class="badge-container">
   <div [ngClass]="className">
     <i *ngIf="getStatus" class="badge-info-icone-{{getStatus}}"></i>
-    <div class="badge-info-texto">{{ codigoStatus | status }}</div>
+    <div class="badge-info-texto">{{ codigoStatus | statusApl }}</div>
     <div *ngIf="qtdStatus >= 0 && btnClicavel === true" class="badge-info-qtd">
       {{ qtdStatus }}
     </div>
