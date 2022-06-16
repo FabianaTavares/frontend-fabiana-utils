@@ -1,3 +1,4 @@
+import { LinksBacanasModule } from './modules/links-bacanas/links-bacanas.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './components/admin/admin.component';
@@ -52,6 +53,45 @@ const routes: Routes = [
           ]
         },
         loadChildren: () => import('./modules/blog/blog.module').then(m => m.BlogModule),
+        //canActivate: [PrivateGuardService]
+      },
+      {
+        path: '',
+        data: {
+          preload: true,
+          breadcrumb: [
+            {
+              titulo: 'Componentes'
+            }
+          ]
+        },
+        loadChildren: () => import('./modules/componentes/componentes.module').then(m => m.ComponentesModule),
+        //canActivate: [PrivateGuardService]
+      },
+      {
+        path: '',
+        data: {
+          preload: true,
+          breadcrumb: [
+            {
+              titulo: 'Comportamentos'
+            }
+          ]
+        },
+        loadChildren: () => import('./modules/comportamentos/comportamentos.module').then(m => m.ComportamentosModule),
+        //canActivate: [PrivateGuardService]
+      },
+      {
+        path: '',
+        data: {
+          preload: true,
+          breadcrumb: [
+            {
+              titulo: 'Links Bacanas'
+            }
+          ]
+        },
+        loadChildren: () => import('./modules/links-bacanas/links-bacanas.module').then(m => m.LinksBacanasModule),
         //canActivate: [PrivateGuardService]
       }
     ]
