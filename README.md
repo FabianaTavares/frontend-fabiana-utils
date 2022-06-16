@@ -1,4 +1,7 @@
 # Fabiana Utils
+URL
+![](https://github.com/FabianaTavares/frontend-fabiana-utils/workflows/changelog/badge.svg)
+
 
 Decidi reunir em um unico lugar exemplos que podem me ser uteis, existem componentes, shared, e exemplos funcionais de situações que passei nos ultimos anos em diversos tipos de projetos.
 
