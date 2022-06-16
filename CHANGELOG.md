@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/FabianaTavares/fabiana-utils/compare/v0.1.3...v0.1.4) (2022-06-16)
+
+
+### Funcionalidades
+
+* criação de modulos e componentes do menu superior ([5d4b5b0](https://github.com/FabianaTavares/fabiana-utils/commit/5d4b5b0eb640d1b4c4dd05d55e8ac2e68a3c4083))
+
 ### [0.1.3](https://github.com/FabianaTavares/fabiana-utils/compare/v0.1.2...v0.1.3) (2022-06-16)
 
 
