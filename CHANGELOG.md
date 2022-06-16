@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/FabianaTavares/fabiana-utils/compare/v0.1.2...v0.1.3) (2022-06-16)
+
+
+### Funcionalidades
+
+* colocando o logado como true por enquanto e criando o modulo e componente de blog ([39c3e82](https://github.com/FabianaTavares/fabiana-utils/commit/39c3e82b79eb18e5fbd54563fc062479cbc95bed))
+
 ### [0.1.2](https://github.com/FabianaTavares/fabiana-utils/compare/v0.1.1...v0.1.2) (2022-06-16)
 
 
