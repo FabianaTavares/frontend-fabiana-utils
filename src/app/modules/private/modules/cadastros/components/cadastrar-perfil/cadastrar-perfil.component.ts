@@ -49,6 +49,8 @@ export class CadastrarPerfilComponent implements OnInit {
     this.status = "N";
     this.telefoneTeste = '3133541101';
     this.path = '/rota-teste';
+
+    console.log('alteação de testes de changelog');
   }
 
   criarFormulario() {
