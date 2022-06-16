@@ -27,6 +27,8 @@ import { AdicionarBotaoComponent } from './adicionar-botao/adicionar-botao.compo
 import { PainelEdicaoContainerSimplesComponent } from './painel-edicao-container/components/painel-edicao-container-simples/painel-edicao-container-simples.component';
 import { PainelModoEdicaoContainerComponent } from './painel-edicao-container/components/painel-modo-edicao-container/painel-modo-edicao-container.component';
 import { PainelModoVisualizacaoContainerComponent } from './painel-edicao-container/components/painel-modo-visualizacao-container/painel-modo-visualizacao-container.component';
+import { BadgeStatusNovoComponent } from './badge-status-novo/badge-status-novo.component';
+import { PaginacaoOpcaoNovaComponent } from './paginacao-opcao-nova/paginacao-opcao-nova.component';
 
 
 @NgModule({
@@ -68,6 +70,8 @@ import { PainelModoVisualizacaoContainerComponent } from './painel-edicao-contai
     PainelEdicaoContainerSimplesComponent,
     PainelModoEdicaoContainerComponent,
     PainelModoVisualizacaoContainerComponent,
+    BadgeStatusNovoComponent,
+    PaginacaoOpcaoNovaComponent,
   ],
   exports: [
     AlertInfoComponent,
@@ -90,7 +94,9 @@ import { PainelModoVisualizacaoContainerComponent } from './painel-edicao-contai
     AdicionarBotaoComponent,
     PainelEdicaoContainerSimplesComponent,
     PainelModoEdicaoContainerComponent,
-    PainelModoVisualizacaoContainerComponent
+    PainelModoVisualizacaoContainerComponent,
+    BadgeStatusNovoComponent,
+    PaginacaoOpcaoNovaComponent
   ],
   providers: [
     BreadcrumbService,
