@@ -29,7 +29,7 @@ const routes: Routes = [
     component: ProjetoUtilsAdminComponent,
     children: [
       {
-        path: 'teste',
+        path: '',
         data: {
           preload: true,
           breadcrumb: [
@@ -39,6 +39,19 @@ const routes: Routes = [
           ]
         },
         loadChildren: () => import('./modules/cadastros/cadastros.module').then(m => m.CadastrosModule),
+        //canActivate: [PrivateGuardService]
+      },
+      {
+        path: '',
+        data: {
+          preload: true,
+          breadcrumb: [
+            {
+              titulo: 'Blog'
+            }
+          ]
+        },
+        loadChildren: () => import('./modules/blog/blog.module').then(m => m.BlogModule),
         //canActivate: [PrivateGuardService]
       }
     ]

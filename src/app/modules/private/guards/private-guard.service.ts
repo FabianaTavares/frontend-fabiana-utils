@@ -12,13 +12,14 @@ export class PrivateGuardService {
     private router: Router
   ) { }
 
-  canActivate(){
-    if(this.auth.isAutenticated()){
-      return this.auth.isAutenticated();
-    }
+  canActivate() {
+    /*  if(this.auth.isAutenticated()){
+       return this.auth.isAutenticated();
+     }
 
-    this.router.navigate(['aplicacao/login']);
-    return false;
+     this.router.navigate(['aplicacao/login']);
+     return false; */
+    return true;
   }
 
 }
