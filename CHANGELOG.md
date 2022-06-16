@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/FabianaTavares/fabiana-utils/compare/v0.1.0...v0.1.1) (2022-06-16)
+
+
+### Funcionalidades
+
+* colocando o os icones para funcionar ([d423efc](https://github.com/FabianaTavares/fabiana-utils/commit/d423efc1d18cbbaedb960608c0e0052e8b825591))
+
 ## [0.1.0](https://github.com/FabianaTavares/fabiana-utils/compare/v0.0.9...v0.1.0) (2022-06-16)
 
 
