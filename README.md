@@ -1,6 +1,6 @@
 # Fabiana Utils
-![](https://github.com/FabianaTavares/frontend-fabiana-utils/workflows/changelog/badge.svg)
 
+![Status CHANGELOG](https://github.com/FabianaTavares/frontend-fabiana-utils/workflows/GGerador%20de%20CHANGELOG/badge.svg)
 
 Decidi reunir em um unico lugar exemplos que podem me ser uteis, existem componentes, shared, e exemplos funcionais de situações que passei nos ultimos anos em diversos tipos de projetos.
 
