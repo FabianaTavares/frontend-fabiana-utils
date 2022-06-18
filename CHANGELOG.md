@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/FabianaTavares/fabiana-utils/compare/v0.1.5...v0.1.6) (2022-06-18)
+
+
+### Funcionalidades
+
+* testando menu-lateral no blog works e ajustando com o footer ([de9da45](https://github.com/FabianaTavares/fabiana-utils/commit/de9da45e32cde55605408eb228fe5b4f9243703b))
+
 ### [0.1.5](https://github.com/FabianaTavares/fabiana-utils/compare/v0.1.4...v0.1.5) (2022-06-16)
 
 
