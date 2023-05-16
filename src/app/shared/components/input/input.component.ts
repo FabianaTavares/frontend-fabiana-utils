@@ -8,7 +8,7 @@ import { InputContainerDefault } from './models/input-container-const.model';
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
-  styleUrls: ['./input.component.css']
+  styleUrls: ['./input.component.scss']
 })
 export class InputComponent implements OnInit, OnDestroy, AfterViewInit {
 
@@ -42,7 +42,7 @@ export class InputComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    if (this.input === undefined){
+    if (this.input === undefined) {
       throw new Error('<app-input> precisa ser utilizado com uma diretiva formControlName');
     }
 
@@ -50,11 +50,11 @@ export class InputComponent implements OnInit, OnDestroy, AfterViewInit {
     this.subscriptions = this.subscribers();
   }
 
-  private carregarElementos(): any{
+  private carregarElementos(): any {
     const labelSelect = this.targetLabel ? this.targetLabel : this.input.name;
     const seletor = this.targetId ? `*[id=${this.targetId}]` : `*[formControlName=${this.input.name}]`;
     this.elementRef = document.querySelector(seletor);
-    if(!this.elementRef){
+    if (!this.elementRef) {
       return;
     }
 
@@ -68,7 +68,7 @@ export class InputComponent implements OnInit, OnDestroy, AfterViewInit {
     return [
       this.input.statusChanges
         .pipe(
-            debounceTime(300)
+          debounceTime(300)
         )
         .subscribe(() => {
           this.verificarEstado();
@@ -83,18 +83,18 @@ export class InputComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   private atribuirMensagem(): void {
-    if(this.isInvalid()) {
+    if (this.isInvalid()) {
       const errorName = Object.keys(this.input.errors)[0];
       this.mensagemErroAtual = this.definirMensagem(errorName);
     }
   }
 
   private isInvalid(): boolean {
-    if(this.input.errors != null){
+    if (this.input.errors != null) {
       const errorName = Object.keys(this.input.errors)[0];
-      if(this.exibirApenasValidadors.length > 0){
+      if (this.exibirApenasValidadors.length > 0) {
         return this.exibirApenasValidadors.includes(errorName);
-      }else {
+      } else {
         return this.input.invalid;
       }
     }
@@ -103,7 +103,7 @@ export class InputComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   private getLabelElem(selector: string): HTMLElement {
-    if(this.targetLabel) {
+    if (this.targetLabel) {
       return document.getElementById(this.targetLabel);
     }
 
@@ -114,14 +114,14 @@ export class InputComponent implements OnInit, OnDestroy, AfterViewInit {
     if (this.isInvalid()) {
       this.addClass(this.elementRef, 'is-invalid');
       this.addClass(this.label, 'label-error');
-    }else{
+    } else {
       this.removeClass(this.elementRef, 'is-invalid');
       this.removeClass(this.label, 'label-error');
     }
   }
 
   private definirMensagem(validatorName: string): string {
-    if(this.mensagemToValidators != null) {
+    if (this.mensagemToValidators != null) {
       return this.getMensagemCustomizada(validatorName);
     }
     return this.getDefaultMessage(validatorName);
@@ -132,18 +132,18 @@ export class InputComponent implements OnInit, OnDestroy, AfterViewInit {
       const msg = this.mensagemToValidators.find(key => {
         return (key[validatorName]);
       })[validatorName];
-      if(msg != null){
+      if (msg != null) {
         return msg;
       }
-    } catch (error){
+    } catch (error) {
       return this.getDefaultMessage(validatorName);
     }
   }
 
   private getDefaultMessage(validatorName: string): string {
     const msg = InputContainerDefault[0][validatorName];
-    if(msg != null){
-      switch(validatorName){
+    if (msg != null) {
+      switch (validatorName) {
         case 'minlength':
           return msg.replace('{VALUE}', (this.input.errors.minlength.requiredLength || 'NOT_CONTENT'));
         case 'maxlength':
@@ -154,20 +154,20 @@ export class InputComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
-  private addClass(element, classStr: string){
-    if(element != null && !element.classList.contains(classStr)){
+  private addClass(element, classStr: string) {
+    if (element != null && !element.classList.contains(classStr)) {
       element.classList.add(classStr);
     }
   }
 
-  private removeClass(element, classStr: string){
-    if(element != null && element.classList.contains(classStr)){
+  private removeClass(element, classStr: string) {
+    if (element != null && element.classList.contains(classStr)) {
       element.classList.remove(classStr);
     }
   }
 
   ngOnDestroy(): void {
-    if(this.subscriptions) {
+    if (this.subscriptions) {
       this.subscriptions.forEach(sub => sub.unsubscribe());
     }
   }

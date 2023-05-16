@@ -4,7 +4,7 @@ import { AbaModel } from './model/aba.model';
 @Component({
   selector: 'app-abas',
   templateUrl: './abas.component.html',
-  styleUrls: ['./abas.component.css']
+  styleUrls: ['./abas.component.scss']
 })
 export class AbasComponent implements OnInit {
 
@@ -18,7 +18,7 @@ export class AbasComponent implements OnInit {
     this.criarAbas();
   }
 
-  criarAbas(){
+  criarAbas() {
     this.listaDeAbas = [
       {
         nome: 'aba de teste 1',

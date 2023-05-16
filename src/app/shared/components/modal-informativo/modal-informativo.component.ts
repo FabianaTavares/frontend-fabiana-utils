@@ -4,7 +4,7 @@ import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-modal-informativo',
   templateUrl: './modal-informativo.component.html',
-  styleUrls: ['./modal-informativo.component.css']
+  styleUrls: ['./modal-informativo.component.scss']
 })
 export class ModalInformativoComponent implements OnInit {
 
@@ -20,12 +20,12 @@ export class ModalInformativoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  confirmar(){
+  confirmar() {
     this.confirmarEvt.emit();
     this.fecharModal();
   }
 
-  fecharModal(){
+  fecharModal() {
     this.modalRef.hide();
   }
 

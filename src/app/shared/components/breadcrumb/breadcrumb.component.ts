@@ -7,7 +7,7 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-breadcrumb',
   templateUrl: './breadcrumb.component.html',
-  styleUrls: ['./breadcrumb.component.css']
+  styleUrls: ['./breadcrumb.component.scss']
 })
 export class BreadcrumbComponent implements OnInit {
 
@@ -29,7 +29,7 @@ export class BreadcrumbComponent implements OnInit {
     this.listarRotas();
   }
 
-  cadastrarEventos(){
+  cadastrarEventos() {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)).subscribe(() => {
         this.listarRotas();
@@ -40,7 +40,7 @@ export class BreadcrumbComponent implements OnInit {
     });
   }
 
-  private listarRotas(){
+  private listarRotas() {
     const root: ActivatedRoute = this.activatedRoute.root;
     this.breadcrumbs = this.getBreadcrumbs(root);
   }
@@ -50,16 +50,16 @@ export class BreadcrumbComponent implements OnInit {
     const ROUTE_LIST_DATA_BREADCRUMB = 'breadcrumb';
     const children: ActivatedRoute[] = route.children;
 
-    if(children.length === 0){
+    if (children.length === 0) {
       return breadcrumbs;
     }
 
-    for (const child of children){
-      if(child.outlet !== PRIMARY_OUTLET){
+    for (const child of children) {
+      if (child.outlet !== PRIMARY_OUTLET) {
         continue;
       }
 
-      if (!child.snapshot.data.hasOwnProperty(ROUTE_DATA_BREADCRUMB) && !child.snapshot.data.hasOwnProperty(ROUTE_LIST_DATA_BREADCRUMB)){
+      if (!child.snapshot.data.hasOwnProperty(ROUTE_DATA_BREADCRUMB) && !child.snapshot.data.hasOwnProperty(ROUTE_LIST_DATA_BREADCRUMB)) {
         return this.getBreadcrumbs(child, url, breadcrumbs);
       }
 
@@ -67,27 +67,27 @@ export class BreadcrumbComponent implements OnInit {
 
       url += `/${routeURL}`;
 
-      if(child.snapshot.data.hasOwnProperty(ROUTE_DATA_BREADCRUMB)){
+      if (child.snapshot.data.hasOwnProperty(ROUTE_DATA_BREADCRUMB)) {
         const breadcrumb: BreadcrumbModel = {
           titulo: child.snapshot.data[ROUTE_DATA_BREADCRUMB],
           params: child.snapshot.params,
           link: url
         };
-        if(this.canAddBread(breadcrumbs, breadcrumb)){
+        if (this.canAddBread(breadcrumbs, breadcrumb)) {
           breadcrumbs.push(breadcrumb);
         }
       }
 
-      if (child.snapshot.data.hasOwnProperty(ROUTE_LIST_DATA_BREADCRUMB)){
+      if (child.snapshot.data.hasOwnProperty(ROUTE_LIST_DATA_BREADCRUMB)) {
         const listaBreads = child.snapshot.data[ROUTE_LIST_DATA_BREADCRUMB] as [];
-        for(let index = 0; index < listaBreads.length; index++){
+        for (let index = 0; index < listaBreads.length; index++) {
           const element = listaBreads[index] as { titulo: string, link: string };
           const breadcrumb: BreadcrumbModel = {
             titulo: element.titulo,
             params: child.snapshot.params,
             link: element.link
           };
-          if(this.canAddBread(breadcrumbs, breadcrumb)){
+          if (this.canAddBread(breadcrumbs, breadcrumb)) {
             breadcrumbs.push(breadcrumb);
           }
         }
@@ -97,8 +97,8 @@ export class BreadcrumbComponent implements OnInit {
     }
   }
 
-  private canAddBread(breadcrumbs: BreadcrumbModel[], breadcrumb: BreadcrumbModel){
-    if(breadcrumb && breadcrumbs) {
+  private canAddBread(breadcrumbs: BreadcrumbModel[], breadcrumb: BreadcrumbModel) {
+    if (breadcrumb && breadcrumbs) {
       return breadcrumbs.find(x => x.titulo === breadcrumb.titulo) == undefined;
     }
     return false;

@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'app-painel-modo-visualizacao-container',
   templateUrl: './painel-modo-visualizacao-container.component.html',
-  styleUrls: ['./painel-modo-visualizacao-container.component.css']
+  styleUrls: ['./painel-modo-visualizacao-container.component.scss']
 })
 export class PainelModoVisualizacaoContainerComponent {
 
@@ -14,7 +14,7 @@ export class PainelModoVisualizacaoContainerComponent {
 
   constructor() { }
 
-  public habilitarEdicao(){
+  public habilitarEdicao() {
     this.editar.emit(true);
   }
 

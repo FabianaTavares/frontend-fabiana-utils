@@ -5,7 +5,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 @Component({
   selector: 'app-modal-confirmar',
   templateUrl: './modal-confirmar.component.html',
-  styleUrls: ['./modal-confirmar.component.css']
+  styleUrls: ['./modal-confirmar.component.scss']
 })
 export class ModalConfirmarComponent implements OnInit {
 
@@ -24,25 +24,25 @@ export class ModalConfirmarComponent implements OnInit {
     this.validaEstouCiente();
   }
 
-  validaEstouCiente(){
-    if(this.confirmarCiente){
+  validaEstouCiente() {
+    if (this.confirmarCiente) {
       this.checkControl = new FormControl(false, [Validators.requiredTrue]);
     }
   }
 
-  confirmar(){
-    if(!this.confirmarCiente){
+  confirmar() {
+    if (!this.confirmarCiente) {
       this.confirmarEvt.emit();
       this.fecharModal();
-    }else{
-      if(this.checkControl.valid){
+    } else {
+      if (this.checkControl.valid) {
         this.confirmarEvt.emit();
         this.fecharModal();
       }
     }
   }
 
-  fecharModal(){
+  fecharModal() {
     this.modalRef.hide();
   }
 

@@ -13,7 +13,7 @@ import { ControleCardEnum } from 'src/app/shared/models/enum/controle-card.enum'
 @Component({
   selector: 'app-cadastrar-perfil',
   templateUrl: './cadastrar-perfil.component.html',
-  styleUrls: ['./cadastrar-perfil.component.css']
+  styleUrls: ['./cadastrar-perfil.component.scss']
 })
 export class CadastrarPerfilComponent implements OnInit {
 

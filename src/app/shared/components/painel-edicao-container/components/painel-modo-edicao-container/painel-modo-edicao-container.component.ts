@@ -3,7 +3,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-painel-modo-edicao-container',
   templateUrl: './painel-modo-edicao-container.component.html',
-  styleUrls: ['./painel-modo-edicao-container.component.css']
+  styleUrls: ['./painel-modo-edicao-container.component.scss']
 })
 export class PainelModoEdicaoContainerComponent {
 
@@ -18,15 +18,15 @@ export class PainelModoEdicaoContainerComponent {
 
   constructor() { }
 
-  public aplicarEdicao(){
+  public aplicarEdicao() {
     this.aplicar.emit(null);
   }
 
-  public salvarEdicao(){
+  public salvarEdicao() {
     this.salvar.emit(null);
   }
 
-  public cancelarEdicao(){
+  public cancelarEdicao() {
     this.fechar.emit(null);
   }
 
