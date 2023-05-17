@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   ]
 })
 export class ValidaFormModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ValidaFormModule> {
     return {
       ngModule: ValidaFormModule,
       providers: [ValidaFormService]

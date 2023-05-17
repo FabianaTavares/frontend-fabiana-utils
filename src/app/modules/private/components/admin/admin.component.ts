@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConstantUtils } from 'src/app/shared/models/interface/constants.util';
-
+import { ConstantUtils } from '../../../../shared/models/interface/constants.util';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',

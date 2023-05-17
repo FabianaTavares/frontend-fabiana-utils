@@ -13,6 +13,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "string-mask",
+              "jquery",
+              "rxjs-compat"
+            ],
             "outputPath": "dist/fabiana-utils",
             "index": "src/index.html",
             "main": "src/main.ts",

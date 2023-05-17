@@ -11,7 +11,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
   ]
 })
 export class SistemaModalModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<SistemaModalModule> {
     return {
       ngModule: SistemaModalModule,
       providers: [SistemaModalService]
