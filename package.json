@@ -11,7 +11,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "json-server": "json-server src/assets/database/database.js --delay 200"
+    "json-server": "json-server src/assets/database/database.js --delay 200",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {

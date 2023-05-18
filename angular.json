@@ -5,7 +5,11 @@
   "projects": {
     "fabiana-utils": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -110,7 +114,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-devkit/build-angular:eslint",
           "options": {
             "tsConfig": [
               "tsconfig.app.json",
@@ -140,10 +144,5 @@
   "defaultProject": "fabiana-utils",
   "cli": {
     "analytics": false
-  },
-  "schematics": {
-    "@schematics/angular:component": {
-      "style": "scss"
-    }
   }
 }
