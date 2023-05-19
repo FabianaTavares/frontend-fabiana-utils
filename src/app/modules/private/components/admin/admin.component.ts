@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ConstantUtils } from 'src/app/shared/models/interface/constants.util';
-
+import { ConstantUtils } from '../../../../shared/models/interface/constants.util';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
 
@@ -13,7 +12,7 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getVersao(){
+  getVersao() {
     return ConstantUtils.build_version;
   }
 

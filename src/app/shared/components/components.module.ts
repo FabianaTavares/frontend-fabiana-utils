@@ -46,11 +46,6 @@ import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
     SistemaModalModule,
     NgxPaginationModule
   ],
-  entryComponents: [
-    ModalConfirmarComponent,
-    ModalInformativoComponent,
-    ModalPadraoComponent
-  ],
   declarations: [
     AlertInfoComponent,
     ContainerComponent,

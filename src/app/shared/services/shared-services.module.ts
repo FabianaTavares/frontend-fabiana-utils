@@ -11,7 +11,7 @@ import { CodigoRecuperarService } from './services/codigo-recuperar.service';
   ]
 })
 export class SharedServicesModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<SharedServicesModule> {
     return {
       ngModule: SharedServicesModule,
       providers: [

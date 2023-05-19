@@ -5,7 +5,7 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 @Component({
   selector: 'app-modal-padrao',
   templateUrl: './modal-padrao.component.html',
-  styleUrls: ['./modal-padrao.component.css']
+  styleUrls: ['./modal-padrao.component.scss']
 })
 export class ModalPadraoComponent implements OnInit {
 
@@ -30,19 +30,19 @@ export class ModalPadraoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  mostrarModal(){
+  mostrarModal() {
     this.bsModalRef = this.modalService.show(this.templateRef, { class: 'modal-dialog-centered' });
   }
 
-  fecharModal(){
+  fecharModal() {
     this.deny.emit();
     this.bsModalRef.hide();
   }
 
-  confirmar(valor?: any){
-    if(valor){
+  confirmar(valor?: any) {
+    if (valor) {
       this.confirm.emit(valor);
-    }else{
+    } else {
       this.confirm.emit();
     }
     this.bsModalRef.hide();

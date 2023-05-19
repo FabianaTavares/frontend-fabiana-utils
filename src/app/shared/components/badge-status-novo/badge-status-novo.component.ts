@@ -3,7 +3,7 @@ import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 @Component({
   selector: 'app-badge-status-novo',
   templateUrl: './badge-status-novo.component.html',
-  styleUrls: ['./badge-status-novo.component.css']
+  styleUrls: ['./badge-status-novo.component.scss']
 })
 export class BadgeStatusNovoComponent implements OnInit {
 

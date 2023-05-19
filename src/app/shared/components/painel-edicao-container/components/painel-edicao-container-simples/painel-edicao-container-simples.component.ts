@@ -3,7 +3,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-painel-edicao-container-simples',
   templateUrl: './painel-edicao-container-simples.component.html',
-  styleUrls: ['./painel-edicao-container-simples.component.css']
+  styleUrls: ['./painel-edicao-container-simples.component.scss']
 })
 export class PainelEdicaoContainerSimplesComponent implements OnInit {
 
@@ -28,13 +28,13 @@ export class PainelEdicaoContainerSimplesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public habilitarEdicao(){
+  public habilitarEdicao() {
     this.editar.emit(true);
     this._edicao = true;
   }
 
 
-  public desabilitarEdicao(){
+  public desabilitarEdicao() {
     this._edicao = false;
     this.cancelar.emit(null);
   }
@@ -43,11 +43,11 @@ export class PainelEdicaoContainerSimplesComponent implements OnInit {
     alert(event.message);
   }
 
-  salvarEdicao(){
+  salvarEdicao() {
     this.salvar.emit(null);
   }
 
-  public get edicao(){
+  public get edicao() {
     return this._edicao;
   }
 

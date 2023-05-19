@@ -3,7 +3,7 @@ import { Component, Input, OnInit, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-adicionar-botao',
   templateUrl: './adicionar-botao.component.html',
-  styleUrls: ['./adicionar-botao.component.css']
+  styleUrls: ['./adicionar-botao.component.scss']
 })
 export class AdicionarBotaoComponent implements OnInit {
 

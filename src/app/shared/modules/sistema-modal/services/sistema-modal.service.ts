@@ -19,16 +19,16 @@ export class SistemaModalService {
     this.cadastrarRotas();
   }
 
-  private cadastrarRotas(){
+  private cadastrarRotas() {
     this.router.events
-    .pipe(filter(event => event instanceof NavigationEnd))
-    .subscribe(() => {
-      this.ocultarTodos();
-    });
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.ocultarTodos();
+      });
   }
 
-  ocultarTodos(){
-    if(this.bsModalService.getModalsCount() > 0){
+  ocultarTodos() {
+    if (this.bsModalService.getModalsCount() > 0) {
       this.modais.forEach((value, key) => {
         value.hide();
         this.modais.delete(key);
@@ -42,7 +42,7 @@ export class SistemaModalService {
    * @param content Conteúdo do modal
    * @param options Opções para exibição do modal
    */
-  exibir(id: string, content: any, options?: ModalOptions){
+  exibir(id: string, content: any, options?: ModalOptions) {
     const modalRef: BsModalRef = this.bsModalService.show(content, {
       animated: options.animated || true,
       backdrop: options.backdrop || true,
@@ -62,7 +62,7 @@ export class SistemaModalService {
    * @param content Conteudo do modal
    * @param options Opções para exibição do modal
    */
-  exibirModal(content: any, options?: ModalOptions){
+  exibirModal(content: any, options?: ModalOptions) {
     this.bsModalService.show(content, {
       animated: options.animated || true,
       backdrop: options.backdrop || true,
@@ -79,8 +79,8 @@ export class SistemaModalService {
    * Metodo utilizado para ocultar um modal em exibição.
    * @param id ID do modal que deseja ocultar
    */
-  ocultar(id: string){
-    if(this.modais.has(id)){
+  ocultar(id: string) {
+    if (this.modais.has(id)) {
       this.modais.get(id).hide();
       this.modais.delete(id);
     }
@@ -90,20 +90,19 @@ export class SistemaModalService {
    * Crie um modal de cancelar/confirmar com a mensagem customizada.
    * @returns Observable<boolean> caso o usuário clique em confirmar.
    */
-  openDialog(mensagem: string, confirmarCliente = false, titulo?: string):
-  Observable<boolean> {
-    this.exibir('MODAL_CONFIRM', ModalConfirmarComponent, {
+  openDialog(mensagem?: string, confirmarCliente = false, titulo?: string):
+    Observable<boolean> {
+    const initialState = { mensagem: mensagem, confirmarCliente: confirmarCliente, titulo: titulo };
+
+    this.exibir('MODAL_CONFIRM', ModalConfirmarComponent, Object.assign({
       class: 'modal-dialog-centered',
-      initialState: {
-        mensagem,
-        confirmarCliente,
-        titulo
-      }
-    });
+      initialState
+
+    }));
     return this.modais.get('MODAL_CONFIRM').content.confirmarEvt;
   }
 
-  open(component, initialState?: Object){
+  open(component, initialState?: Object) {
     return this.bsModalService.show(component, {
       class: 'modal-dialog-centered modal-lg',
       initialState
@@ -111,11 +110,11 @@ export class SistemaModalService {
   }
 
   openModalInfo(mensagem: string): Observable<boolean> {
-    this.exibir('MODAL_INFO', ModalInformativoComponent, {
+    this.exibir('MODAL_INFO', ModalInformativoComponent, Object.assign({
       initialState: {
         mensagem
       }
-    });
+    }));
     return this.modais.get('MODAL_INFO').content.confirmarEvt;
   }
 

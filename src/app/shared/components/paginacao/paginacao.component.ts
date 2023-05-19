@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'app-paginacao',
   templateUrl: './paginacao.component.html',
-  styleUrls: ['./paginacao.component.css']
+  styleUrls: ['./paginacao.component.scss']
 })
 export class PaginacaoComponent implements OnInit {
 
@@ -17,7 +17,7 @@ export class PaginacaoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  novaPagina(event: any){
+  novaPagina(event: any) {
     this.consultarPagina.next(event.page);
   }
 

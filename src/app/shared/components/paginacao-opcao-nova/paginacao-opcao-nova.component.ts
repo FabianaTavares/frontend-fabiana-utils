@@ -6,7 +6,7 @@ import { PaginacaoNova } from '../../models/class/paginacao-nova';
 @Component({
   selector: 'app-paginacao-opcao-nova',
   templateUrl: './paginacao-opcao-nova.component.html',
-  styleUrls: ['./paginacao-opcao-nova.component.css']
+  styleUrls: ['./paginacao-opcao-nova.component.scss']
 })
 export class PaginacaoOpcaoNovaComponent implements OnInit {
 
