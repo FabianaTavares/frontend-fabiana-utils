@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from "@angular/common/http";
-import { FormGroup } from "@angular/forms";
+import { UntypedFormGroup } from "@angular/forms";
 import * as $ from 'jquery';
 
 declare global {
@@ -23,7 +23,7 @@ export function removeDuplicatedArray<T>(array: Array<T>, key: string): Array<T>
   return array.filter(obj => !novoArray.has(obj[key]) && novoArray.add(obj[key]));
 }
 
-export function ativarMensagemErros(form: FormGroup): void {
+export function ativarMensagemErros(form: UntypedFormGroup): void {
   Object.keys(form.controls).forEach(ctrl => {
     form.get(ctrl).updateValueAndValidity();
   })

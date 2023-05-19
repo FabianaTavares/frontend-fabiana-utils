@@ -1,7 +1,7 @@
 import { environment } from './../../../../../environments/environment';
 import { MsgSystemEnum } from './../../../models/enum/msg-system.enum';
 import { Injectable } from '@angular/core';
-import { FormArray, FormGroup } from '@angular/forms';
+import { UntypedFormArray, UntypedFormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { ValidaFormOption } from '../model/valida-form-option.model';
 
@@ -15,7 +15,7 @@ export class ValidaFormService {
 
   constructor() { }
 
-  validarFormulario(formObj: FormGroup | FormArray, option?: Partial<ValidaFormOption>, parentErrors?: Array<any>){
+  validarFormulario(formObj: UntypedFormGroup | UntypedFormArray, option?: Partial<ValidaFormOption>, parentErrors?: Array<any>){
     const errors = parentErrors || [];
     let elementoFocus: HTMLElement;
     let formArray;
@@ -25,20 +25,20 @@ export class ValidaFormService {
 
       Object.keys(formObj.controls).forEach(nomeDoControle => {
         const controle = formObj.get(nomeDoControle);
-        if(controle instanceof FormGroup || controle instanceof FormArray){
-          if(controle instanceof FormArray){
+        if(controle instanceof UntypedFormGroup || controle instanceof UntypedFormArray){
+          if(controle instanceof UntypedFormArray){
             option.grupoPai = nomeDoControle;
           }
           option.nomeDoGrupo = nomeDoControle;
           this.validarFormulario(controle, option, errors);
         }
 
-        if(controle.invalid && !(controle instanceof FormGroup)){
+        if(controle.invalid && !(controle instanceof UntypedFormGroup)){
           let elemento;
 
           let seletor;
 
-          if(controle.parent.parent && controle.parent.parent instanceof FormArray){
+          if(controle.parent.parent && controle.parent.parent instanceof UntypedFormArray){
             seletor = `*[formArrayName=${option.grupoPai}]`;
             formArray = document.querySelector(seletor);
             elemento = formArray;
@@ -79,7 +79,7 @@ export class ValidaFormService {
           }
 
           if(controle.parent.parent && controle.parent.parent instanceof
-            FormArray
+            UntypedFormArray
             && (controle.value == null || controle.value.length === 0))
           {
               if(nomeElemento === 'Horario de Testes'){
@@ -90,14 +90,14 @@ export class ValidaFormService {
                 mensagem = MsgSystemEnum.A013.replace('{VALUE}', nomeElemento);
               }
           } else if (controle.parent.parent && controle.parent.parent
-            instanceof FormArray && controle.hasError('horaInicialMaior'))
+            instanceof UntypedFormArray && controle.hasError('horaInicialMaior'))
           {
             mensagem = MsgSystemEnum.MSG_INATERVALO_HORA_INVALIDO;
           } else if (controle.parent.parent && controle.parent.parent
-          instanceof FormArray && controle.hasError('dataInicialMaior')){
+          instanceof UntypedFormArray && controle.hasError('dataInicialMaior')){
             mensagem = MsgSystemEnum.MSG_INATERVALO_DATA_INVALIDO;
           } else if (controle.parent.parent && controle.parent.parent
-          instanceof FormArray && controle.hasError('dataInicialMenorAtual')){
+          instanceof UntypedFormArray && controle.hasError('dataInicialMenorAtual')){
             mensagem = MsgSystemEnum.MSG_DATA_INICIAL_MENOR_ATUAL;
           }
           else if(controle.hasError('arquivoInvalido')){

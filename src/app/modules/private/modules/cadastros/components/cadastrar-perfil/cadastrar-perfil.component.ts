@@ -1,6 +1,6 @@
 import { ReqService } from './../../../../../../shared/services/services/req.service';
 import { ValidacaoFormsValidators } from './../../../../../../shared/validators/functions-valid.model';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { SistemaModalService } from './../../../../../../shared/modules/sistema-modal/services/sistema-modal.service';
 import { PaginaPublicaModel } from './../../../../../../shared/models/interface/pagina-publica.model';
 import { BreadcrumbService } from './../../../../../../shared/components/breadcrumb/services/breadcrumb.service';
@@ -24,7 +24,7 @@ export class CadastrarPerfilComponent implements OnInit {
   pesquisaTeste: any; //trocar o any pelo model de pesquisa do componente
   status: any;
   path: string;
-  formTeste: FormGroup;
+  formTeste: UntypedFormGroup;
   telefoneTeste: string;
   id: number;
 
@@ -34,7 +34,7 @@ export class CadastrarPerfilComponent implements OnInit {
   infoText: string = '';
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private breadcrumbService: BreadcrumbService,
     private sistemaModalService: SistemaModalService,
     private req: ReqService

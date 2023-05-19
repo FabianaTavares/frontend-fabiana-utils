@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { UntypedFormControl, Validators } from '@angular/forms';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
@@ -14,7 +14,7 @@ export class ModalConfirmarComponent implements OnInit {
   txtBtnSim: 'Sim';
   confirmarCiente: false;
   confirmarEvt: EventEmitter<boolean> = new EventEmitter();
-  checkControl: FormControl;
+  checkControl: UntypedFormControl;
 
   constructor(
     private modalRef: BsModalRef
@@ -26,7 +26,7 @@ export class ModalConfirmarComponent implements OnInit {
 
   validaEstouCiente() {
     if (this.confirmarCiente) {
-      this.checkControl = new FormControl(false, [Validators.requiredTrue]);
+      this.checkControl = new UntypedFormControl(false, [Validators.requiredTrue]);
     }
   }
 
