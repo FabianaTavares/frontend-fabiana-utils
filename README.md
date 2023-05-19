@@ -1,6 +1,6 @@
 # Fabiana Utils
 
-![GitHub Workflow Status](https://github.com/FabianaTavares/frontend-fabiana-utils/workflows/statusGerador%20de%20CHANGELOG/badge.svg)
+![GitHub Workflow Status](https://github.com/FabianaTavares/frontend-fabiana-utils/workflows/Gerador%20de%20CHANGELOG/badge.svg)
 ![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/FabianaTavares/frontend-fabiana-utils?color=blue)
 
 Decidi reunir em um unico lugar exemplos que podem me ser uteis, existem componentes, shared, e exemplos funcionais de situações que passei nos ultimos anos em diversos tipos de projetos.
