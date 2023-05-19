@@ -141,7 +141,6 @@
       }
     }
   },
-  "defaultProject": "fabiana-utils",
   "schematics": {
     "@schematics/angular:component": {
       "style": "scss"
