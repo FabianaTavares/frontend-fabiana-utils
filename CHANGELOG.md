@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/FabianaTavares/fabiana-utils/compare/v0.1.6...v0.2.0) (2023-05-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* alterando versões do angular de 11 para 12 e mudanças de css para scss
+
+### Mudanças que afetam o build ou dependências externas (gulp, npm)
+
+* alterando versões do angular de 11 para 12, e mudanças de css para scss ([cfd98a0](https://github.com/FabianaTavares/fabiana-utils/commit/cfd98a0d3177238f5e6c183c0318bde7b81f7096))
+
 ### [0.1.6](https://github.com/FabianaTavares/fabiana-utils/compare/v0.1.5...v0.1.6) (2022-06-18)
 
 
