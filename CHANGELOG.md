@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/FabianaTavares/fabiana-utils/compare/v0.3.1...v0.4.0) (2023-05-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* mudança na versão do Angular de 14 para 15
+
+### Funcionalidades
+
+* mudança na versão do Angular de 14 para 15 ([b4eabe1](https://github.com/FabianaTavares/fabiana-utils/commit/b4eabe19e0369f5529040327b4804f2af4e067e3)), closes [#V15](https://github.com/FabianaTavares/fabiana-utils/issues/V15)
+
 ### [0.3.1](https://github.com/FabianaTavares/fabiana-utils/compare/v0.3.0...v0.3.1) (2023-05-19)
 
 ## [0.3.0](https://github.com/FabianaTavares/fabiana-utils/compare/v0.2.2...v0.3.0) (2023-05-19)
