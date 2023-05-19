@@ -38,8 +38,8 @@ export class ItemAbaComponent implements OnInit, OnDestroy, OnChanges {
 
   cadastrarEventos() {
     this.rotaSubscription = this.router.events.subscribe(evento => {
-      if (event instanceof NavigationStart) {
-        this.verificarAba(event.url);
+      if (evento instanceof NavigationStart) {
+        this.verificarAba(evento.url);
       }
     });
   }
