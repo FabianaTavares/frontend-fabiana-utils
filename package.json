@@ -15,7 +15,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-eslint/template-parser": "^4.3.1",
+    "@angular-eslint/template-parser": "^13.5.0",
     "@angular/animations": "^13.4.0",
     "@angular/cdk": "^13.3.9",
     "@angular/common": "^13.4.0",
