@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, EventEmitter } from '@angular/core';
+import { ControleCardEnum } from '../../models/enum/controle-card.enum';
 
 @Component({
   selector: 'app-adicionar-botao',
@@ -13,7 +14,7 @@ export class AdicionarBotaoComponent implements OnInit {
 
   @Input() disabled: false;
 
-  @Input() $adicionar: EventEmitter<any> = new EventEmitter();
+  @Input() $adicionar: EventEmitter<ControleCardEnum> = new EventEmitter<ControleCardEnum>();
 
 
   constructor() { }
@@ -22,7 +23,7 @@ export class AdicionarBotaoComponent implements OnInit {
   }
 
   adicionar() {
-    this.$adicionar.next();
+    this.$adicionar.next(null);
   }
 
 }
