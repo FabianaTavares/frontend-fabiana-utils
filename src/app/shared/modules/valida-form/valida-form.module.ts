@@ -3,16 +3,14 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+	declarations: [],
+	imports: [CommonModule]
 })
 export class ValidaFormModule {
-  static forRoot(): ModuleWithProviders<ValidaFormModule> {
-    return {
-      ngModule: ValidaFormModule,
-      providers: [ValidaFormService]
-    }
-  }
+	static forRoot(): ModuleWithProviders<ValidaFormModule> {
+		return {
+			ngModule: ValidaFormModule,
+			providers: [ValidaFormService]
+		};
+	}
 }

@@ -1,0 +1,30 @@
+{
+  "singleQuote": true,
+  "printWidth": 140,
+  "editor.formatOnSave": true,
+  "proseWrap": "always",
+  "tabWidth": 2,
+  "requireConfig": false,
+  "useTabs": true,
+  "trailingComma": "none",
+  "bracketSpacing": true,
+  "bracketSameLine": true,
+  "jsxBracketSameLine": true,
+  "semi": true,
+  "arrowParens": "avoid",
+  "endOfLine": "auto",
+  "overrides": [
+    {
+      "files": "*.component.html",
+      "options": {
+          "parser": "angular"
+      }
+    },
+    {
+      "files": "*.html",
+      "options": {
+          "parser": "angular"
+      }
+    }
+  ]
+}

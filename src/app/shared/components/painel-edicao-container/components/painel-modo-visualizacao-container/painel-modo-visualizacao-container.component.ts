@@ -1,21 +1,19 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-painel-modo-visualizacao-container',
-  templateUrl: './painel-modo-visualizacao-container.component.html',
-  styleUrls: ['./painel-modo-visualizacao-container.component.scss']
+	selector: 'app-painel-modo-visualizacao-container',
+	templateUrl: './painel-modo-visualizacao-container.component.html',
+	styleUrls: ['./painel-modo-visualizacao-container.component.scss']
 })
 export class PainelModoVisualizacaoContainerComponent {
+	@Input() botaoEditar: string;
+	@Input() esconderCabecalho: boolean;
 
-  @Input() botaoEditar: string;
-  @Input() esconderCabecalho: boolean;
+	@Output() editar = new EventEmitter<boolean>();
 
-  @Output() editar = new EventEmitter<boolean>();
+	constructor() {}
 
-  constructor() { }
-
-  public habilitarEdicao() {
-    this.editar.emit(true);
-  }
-
+	public habilitarEdicao() {
+		this.editar.emit(true);
+	}
 }

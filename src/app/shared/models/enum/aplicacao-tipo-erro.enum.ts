@@ -1,3 +1,3 @@
 export enum AplicarTipoError {
-  Error = 'error'
+	Error = 'error'
 }

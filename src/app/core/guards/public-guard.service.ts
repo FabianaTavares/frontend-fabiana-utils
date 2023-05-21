@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class PublicGuardService {
+	constructor() {}
 
-  constructor() { }
+	canActivate(): boolean {
+		return true;
+	}
 
-  canActivate(): boolean {
-    return true;
-  }
-
-  canActivateChild(): boolean{
-    return true;
-  }
+	canActivateChild(): boolean {
+		return true;
+	}
 }

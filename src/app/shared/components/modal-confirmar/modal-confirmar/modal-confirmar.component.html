@@ -1,18 +1,19 @@
 <div class="modal-body text-center">
-  <p [innerHTML]="mensagem"></p>
-  <div class="container" *ngIf="confirmarCiente">
-    <div class="row">
-      <div class="col">
-        <!-- <input type="checkbox" [formControl]="checkControl"> --> Estou ciente.
-      </div>
-    </div>
-  </div>
+	<p [innerHTML]="mensagem"></p>
+	<div class="container" *ngIf="confirmarCiente">
+		<div class="row">
+			<div class="col">
+				<!-- <input type="checkbox" [formControl]="checkControl"> -->
+				Estou ciente.
+			</div>
+		</div>
+	</div>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-default" (click)="fecharModal()">
-    {{ txtBtnNao }}
-  </button>
-  <button type="button" class="btn btn-success" (click)="confirmar()">
-    {{ txtBtnSim }}
-  </button>
+	<button type="button" class="btn btn-default" (click)="fecharModal()">
+		{{ txtBtnNao }}
+	</button>
+	<button type="button" class="btn btn-success" (click)="confirmar()">
+		{{ txtBtnSim }}
+	</button>
 </div>

@@ -1,14 +1,13 @@
 <ng-content select="div"></ng-content>
 <div class="row">
-  <div class="col-md-12">
-    <div class="row mb-2">
-      <h4 class="text-btn">{{ texto }}</h4>
-    </div>
-    <div class="row mb-2">
-      <button type="button" [disabled]="disabled" class="btn btn-primary"
-      (click)="adicionar()">
-        {{ textoBtn }}
-      </button>
-    </div>
-  </div>
+	<div class="col-md-12">
+		<div class="row mb-2">
+			<h4 class="text-btn">{{ texto }}</h4>
+		</div>
+		<div class="row mb-2">
+			<button type="button" [disabled]="disabled" class="btn btn-primary" (click)="adicionar()">
+				{{ textoBtn }}
+			</button>
+		</div>
+	</div>
 </div>

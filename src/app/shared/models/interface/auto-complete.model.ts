@@ -1,4 +1,4 @@
 export class AutoComplete {
-  id?: number;
-  descricao?: string;
+	id?: number;
+	descricao?: string;
 }

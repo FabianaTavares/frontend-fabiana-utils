@@ -1,12 +1,22 @@
-<h3 *ngIf="titulo"> {{titulo}}</h3>
-<h4 *ngIf="subtitulo" class="subtitulo">{{subtitulo}}</h4>
-<app-container [ngClass]="{'subtitulo': subtitulo}">
+<h3 *ngIf="titulo">{{ titulo }}</h3>
+<h4 *ngIf="subtitulo" class="subtitulo">{{ subtitulo }}</h4>
+<app-container [ngClass]="{ subtitulo: subtitulo }">
+	<app-painel-modo-visualizacao-container
+		[esconderCabecalho]="esconderCabecalho"
+		botaoEditar="{{ botaoEditar }}"
+		*ngIf="!edicao"
+		(editar)="habilitarEdicao()">
+		<ng-content select="[visualizacao]" conteudo></ng-content>
+	</app-painel-modo-visualizacao-container>
 
-  <app-painel-modo-visualizacao-container [esconderCabecalho]="esconderCabecalho" botaoEditar="{{botaoEditar}}" *ngIf="!edicao" (editar)="habilitarEdicao()">
-    <ng-content select="[visualizacao]" conteudo></ng-content>
-  </app-painel-modo-visualizacao-container>
-
-  <app-painel-modo-edicao-container  [desabilitarBtnSalvar]="desabilitarBtnSalvar" botaoSalvar="{{botaoSalvar}}" *ngIf="edicao" (salvar)="salvarEdicao()" (fechar)="desabilitarEdicao()" (erro)="tratarErro($event)" [esconderCancelar]="esconderCancelar">
-    <ng-content select="[edicao]" conteudo></ng-content>
-  </app-painel-modo-edicao-container>
+	<app-painel-modo-edicao-container
+		[desabilitarBtnSalvar]="desabilitarBtnSalvar"
+		botaoSalvar="{{ botaoSalvar }}"
+		*ngIf="edicao"
+		(salvar)="salvarEdicao()"
+		(fechar)="desabilitarEdicao()"
+		(erro)="tratarErro($event)"
+		[esconderCancelar]="esconderCancelar">
+		<ng-content select="[edicao]" conteudo></ng-content>
+	</app-painel-modo-edicao-container>
 </app-container>

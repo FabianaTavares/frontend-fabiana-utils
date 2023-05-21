@@ -2,12 +2,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { SimNaoEnum, SimNaoEnumMensagem } from '../../models/enum/sim-nao.enum';
 
 @Pipe({
-  name: 'simNaoTradutor'
+	name: 'simNaoTradutor'
 })
 export class SimNaoTradutorPipe implements PipeTransform {
-
-  transform(value: SimNaoEnum): any {
-    return SimNaoEnumMensagem[value];
-  }
-
+	transform(value: SimNaoEnum): any {
+		return SimNaoEnumMensagem[value];
+	}
 }

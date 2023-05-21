@@ -1,9 +1,9 @@
 export enum AtivoInativoEnum {
-  ATIVO = 'A',
-  INATIVO = 'I',
+	ATIVO = 'A',
+	INATIVO = 'I'
 }
 
 export const AtivoInativoEnumMensagem = {
-  [AtivoInativoEnum.ATIVO]: 'Ativo',
-  [AtivoInativoEnum.INATIVO]: 'Inativo',
-}
+	[AtivoInativoEnum.ATIVO]: 'Ativo',
+	[AtivoInativoEnum.INATIVO]: 'Inativo'
+};

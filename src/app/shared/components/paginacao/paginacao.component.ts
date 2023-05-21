@@ -1,24 +1,21 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-paginacao',
-  templateUrl: './paginacao.component.html',
-  styleUrls: ['./paginacao.component.scss']
+	selector: 'app-paginacao',
+	templateUrl: './paginacao.component.html',
+	styleUrls: ['./paginacao.component.scss']
 })
 export class PaginacaoComponent implements OnInit {
+	@Input() totalItems: number;
+	@Input() totalItemsPage: 10;
+	@Input() pageIndex: string;
+	@Output() consultarPagina: EventEmitter<number> = new EventEmitter();
 
-  @Input() totalItems: number;
-  @Input() totalItemsPage: 10;
-  @Input() pageIndex: string;
-  @Output() consultarPagina: EventEmitter<number> = new EventEmitter();
+	constructor() {}
 
-  constructor() { }
+	ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-  novaPagina(event: any) {
-    this.consultarPagina.next(event.page);
-  }
-
+	novaPagina(event: any) {
+		this.consultarPagina.next(event.page);
+	}
 }

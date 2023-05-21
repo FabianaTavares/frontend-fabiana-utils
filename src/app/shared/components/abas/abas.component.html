@@ -1,8 +1,8 @@
 <ul class="nav nav-justified project-menu">
-  <div *ngFor="let aba of listaDeAbas; let i = index">
-    {{aba.nome}}
-    <app-item-aba [aba]="aba"></app-item-aba>
-  </div>
-  <ng-content></ng-content>
+	<div *ngFor="let aba of listaDeAbas; let i = index">
+		{{ aba.nome }}
+		<app-item-aba [aba]="aba"></app-item-aba>
+	</div>
+	<ng-content></ng-content>
 </ul>
 <router-outlet></router-outlet>

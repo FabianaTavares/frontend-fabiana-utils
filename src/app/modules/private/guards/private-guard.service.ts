@@ -3,23 +3,18 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class PrivateGuardService {
+	constructor(private auth: AuthService, private router: Router) {}
 
-  constructor(
-    private auth: AuthService,
-    private router: Router
-  ) { }
-
-  canActivate() {
-    /*  if(this.auth.isAutenticated()){
+	canActivate() {
+		/*  if(this.auth.isAutenticated()){
        return this.auth.isAutenticated();
      }
 
      this.router.navigate(['aplicacao/login']);
      return false; */
-    return true;
-  }
-
+		return true;
+	}
 }

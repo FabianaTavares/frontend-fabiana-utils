@@ -15,32 +15,25 @@ import { PipesModule } from 'src/app/shared/pipes/pipes.module';
 import { DirectivesModule } from 'src/app/shared/directives/directives.module';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 
-
 @NgModule({
-  declarations: [
-    AdminComponent,
-    ProjetoUtilsAdminComponent
-  ],
-  imports: [
-    CommonModule,
-    PrivateRoutingModule,
-    RouterModule,
-    ReactiveFormsModule,
-    ComponentsModule,
-    PipesModule,
-    TooltipModule.forRoot(),
-    DirectivesModule,
-    ConfirmationPopoverModule.forRoot({
-      confirmButtonType: 'success', // set defaults here
-      cancelButtonType: 'danger',
-      confirmText: 'Sim',
-      cancelText: 'Não'
-    }),
-    SistemaModalModule
-
-  ],
-  providers: [
-    PrivateGuardService
-  ]
+	declarations: [AdminComponent, ProjetoUtilsAdminComponent],
+	imports: [
+		CommonModule,
+		PrivateRoutingModule,
+		RouterModule,
+		ReactiveFormsModule,
+		ComponentsModule,
+		PipesModule,
+		TooltipModule.forRoot(),
+		DirectivesModule,
+		ConfirmationPopoverModule.forRoot({
+			confirmButtonType: 'success', // set defaults here
+			cancelButtonType: 'danger',
+			confirmText: 'Sim',
+			cancelText: 'Não'
+		}),
+		SistemaModalModule
+	],
+	providers: [PrivateGuardService]
 })
-export class PrivateModule { }
+export class PrivateModule {}

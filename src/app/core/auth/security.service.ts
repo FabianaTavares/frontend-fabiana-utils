@@ -3,16 +3,15 @@ import { PerfilEnum } from './../../shared/models/enum/perfil.enum';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class SecurityService {
+	userAuthCredencial: UserAuthCredentialsModel;
 
-  userAuthCredencial: UserAuthCredentialsModel;
+	constructor() {}
 
-  constructor() { }
-
-  perfilLogado(perfil: PerfilEnum | PerfilEnum[]): boolean {
-    //logica é bem grande.
-    return true;
-  }
+	perfilLogado(perfil: PerfilEnum | PerfilEnum[]): boolean {
+		//logica é bem grande.
+		return true;
+	}
 }
