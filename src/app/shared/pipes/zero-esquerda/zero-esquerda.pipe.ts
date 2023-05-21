@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 	name: 'zeroEsquerda'
 })
 export class ZeroEsquerdaPipe implements PipeTransform {
-	public static zeroEsquerda(value, maxSize) {
+	public static zeroEsquerda(value: string | string[], maxSize: number): string {
 		if (value) {
 			value += '';
 			return '0'.repeat(maxSize - value.length) + value;
@@ -12,7 +12,7 @@ export class ZeroEsquerdaPipe implements PipeTransform {
 		return '-';
 	}
 
-	transform(value: any, maxSize?: any): any {
+	transform(value: string | string[], maxSize?: number): string {
 		return ZeroEsquerdaPipe.zeroEsquerda(value, maxSize);
 	}
 }

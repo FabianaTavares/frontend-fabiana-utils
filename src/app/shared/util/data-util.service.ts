@@ -5,7 +5,7 @@ import { AbstractControl } from '@angular/forms';
 	providedIn: 'root'
 })
 export class DataUtilService {
-	convertDateToString(data: Date, scape = '/') {
+	convertDateToString(data: Date, scape = '/'): string {
 		if (data && data instanceof Date) {
 			let month = String(data.getMonth() + 1);
 			let day = String(data.getDate());
@@ -20,12 +20,12 @@ export class DataUtilService {
 		}
 	}
 
-	convertStringToDate(dateStr: string, scape = '/') {
+	convertStringToDate(dateStr: string, scape = '/'): Date {
 		const [day, month, year]: string[] = dateStr.split(scape);
 		return new Date(parseInt(year, 0), parseInt(month, 0) - 1, parseInt(day, 0));
 	}
 
-	addDays(date: Date, days: number) {
+	addDays(date: Date, days: number): Date {
 		const dateCopy = new Date(date);
 		dateCopy.setDate(date.getDate() + days);
 		return dateCopy;
