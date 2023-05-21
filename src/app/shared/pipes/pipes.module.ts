@@ -15,27 +15,25 @@ import { EnumTradutorPipe } from './enum-tradutor/enum-tradutor.pipe';
 import { StatusAplPipe } from './status-apl/status-apl.pipe';
 
 const PIPES = [
-  AtivoInativoPipe,
-  DataSemHoraPipe,
-  CpfCnpjPipe,
-  DecimalMetroQuadradoPipe,
-  DecimalRoundedPipe,
-  TelefonePipe,
-  SimNaoTradutorPipe,
-  SplitCommaPipe,
-  TrueFalsePipe,
-  TrucaTextoPipe,
-  ZeroEsquerdaPipe,
-  EnumTradutorPipe,
-  StatusAplPipe
-]
+	AtivoInativoPipe,
+	DataSemHoraPipe,
+	CpfCnpjPipe,
+	DecimalMetroQuadradoPipe,
+	DecimalRoundedPipe,
+	TelefonePipe,
+	SimNaoTradutorPipe,
+	SplitCommaPipe,
+	TrueFalsePipe,
+	TrucaTextoPipe,
+	ZeroEsquerdaPipe,
+	EnumTradutorPipe,
+	StatusAplPipe
+];
 
 @NgModule({
-  declarations: [PIPES],
-  imports: [
-    CommonModule
-  ],
-  providers: [PIPES],
-  exports: [PIPES]
+	declarations: [PIPES],
+	imports: [CommonModule],
+	providers: [PIPES],
+	exports: [PIPES]
 })
-export class PipesModule { }
+export class PipesModule {}

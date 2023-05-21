@@ -1,13 +1,15 @@
 <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item" [ngClass]="{'active': (i != 0 || breadcrumbs?.length == 1)}" *ngFor="let breadcrumb of breadcrumbs; let i = index">
-      <a *ngIf="breadcrumb?.link else semLink" [routerLink]="breadcrumb?.link">
-        {{breadcrumb?.titulo}}
-      </a>
-      <ng-template #semLink>
-        {{breadcrumb?.titulo}}
-      </ng-template>
-
-    </li>
-  </ol>
+	<ol class="breadcrumb">
+		<li
+			class="breadcrumb-item"
+			[ngClass]="{ active: i != 0 || breadcrumbs?.length == 1 }"
+			*ngFor="let breadcrumb of breadcrumbs; let i = index">
+			<a *ngIf="breadcrumb?.link; else semLink" [routerLink]="breadcrumb?.link">
+				{{ breadcrumb?.titulo }}
+			</a>
+			<ng-template #semLink>
+				{{ breadcrumb?.titulo }}
+			</ng-template>
+		</li>
+	</ol>
 </nav>

@@ -4,12 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ComportamentosRoutingModule } from './comportamentos-routing.module';
 import { ComportamentosComponent } from './comportamentos.component';
 
-
 @NgModule({
-  declarations: [ComportamentosComponent],
-  imports: [
-    CommonModule,
-    ComportamentosRoutingModule
-  ]
+	declarations: [ComportamentosComponent],
+	imports: [CommonModule, ComportamentosRoutingModule]
 })
-export class ComportamentosModule { }
+export class ComportamentosModule {}

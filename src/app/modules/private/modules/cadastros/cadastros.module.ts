@@ -9,16 +9,7 @@ import { CadastrosRoutingModule } from './cadastros-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    CadastrarPerfilComponent
-  ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    CadastrosRoutingModule,
-    ComponentsModule,
-    PipesModule,
-    DirectivesModule
-  ]
+	declarations: [CadastrarPerfilComponent],
+	imports: [CommonModule, ReactiveFormsModule, CadastrosRoutingModule, ComponentsModule, PipesModule, DirectivesModule]
 })
-export class CadastrosModule { }
+export class CadastrosModule {}

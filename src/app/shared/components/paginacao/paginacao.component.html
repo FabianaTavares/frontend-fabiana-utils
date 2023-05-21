@@ -1,10 +1,18 @@
 <div class="row" *ngIf="totalItems">
-  <div class="col-sm-12">
-    <pagination [(ngModel)]="pageIndex" class="pagination-sm"
-      [maxSize]="10"
-      [itemsPerPage]="totalItemsPage" [rotate]="true"
-      (pageChanged)="novaPagina($event)" [boundaryLinks]="true"
-      [totalItems]="totalItems" previousText="Anterior" nextText="Proxima" firstText="Primeira" lastText="Última">
-    </pagination>
-  </div>
+	<div class="col-sm-12">
+		<pagination
+			[(ngModel)]="pageIndex"
+			class="pagination-sm"
+			[maxSize]="10"
+			[itemsPerPage]="totalItemsPage"
+			[rotate]="true"
+			(pageChanged)="novaPagina($event)"
+			[boundaryLinks]="true"
+			[totalItems]="totalItems"
+			previousText="Anterior"
+			nextText="Proxima"
+			firstText="Primeira"
+			lastText="Última">
+		</pagination>
+	</div>
 </div>

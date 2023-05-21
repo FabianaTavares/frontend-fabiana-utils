@@ -8,16 +8,8 @@ import { ComponentsModule } from 'src/app/shared/components/components.module';
 import { PipesModule } from 'src/app/shared/pipes/pipes.module';
 import { DirectivesModule } from 'src/app/shared/directives/directives.module';
 
-
 @NgModule({
-  declarations: [BlogComponent],
-  imports: [
-    CommonModule,
-    BlogRoutingModule,
-    ReactiveFormsModule,
-    ComponentsModule,
-    PipesModule,
-    DirectivesModule
-  ]
+	declarations: [BlogComponent],
+	imports: [CommonModule, BlogRoutingModule, ReactiveFormsModule, ComponentsModule, PipesModule, DirectivesModule]
 })
-export class BlogModule { }
+export class BlogModule {}

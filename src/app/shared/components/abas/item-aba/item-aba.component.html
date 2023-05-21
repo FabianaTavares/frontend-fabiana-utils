@@ -1,9 +1,14 @@
-<li role="presentation" class="content-center" [class.active]="aba?.ativa"
-[class.disabled]="aba?.bloqueada"
-*ngIf="aba?.exibirAba" (click)="direcionarAba()">
-  <span>
-    <span class="espaco-icone">
-      <i class="{{aba?.icone}}"></i>
-    </span> {{aba?.nome}}
-  </span>
+<li
+	role="presentation"
+	class="content-center"
+	[class.active]="aba?.ativa"
+	[class.disabled]="aba?.bloqueada"
+	*ngIf="aba?.exibirAba"
+	(click)="direcionarAba()">
+	<span>
+		<span class="espaco-icone">
+			<i class="{{ aba?.icone }}"></i>
+		</span>
+		{{ aba?.nome }}
+	</span>
 </li>

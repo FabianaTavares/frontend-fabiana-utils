@@ -1,22 +1,21 @@
 <ng-template #template>
-  <div class="modal-header">
-    <h5 class="modal-title">{{titulo}}</h5>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="fecharModal()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
+	<div class="modal-header">
+		<h5 class="modal-title">{{ titulo }}</h5>
+		<button type="button" class="close pull-right" aria-label="Close" (click)="fecharModal()">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
 
-  <div class="modal-body text-center">
-    <p>{{mensagem}}</p>
-  </div>
+	<div class="modal-body text-center">
+		<p>{{ mensagem }}</p>
+	</div>
 
-  <div class="modal-footer">
-    <button *ngIf="!esconderCampoNao" type="button" class="btn btn-default" (click)="fecharModal()">
-      {{ txtBtnNao }}
-    </button>
-    <button *ngIf="!esconderCampoSim" type="button" class="btn btn-success" (click)="confirmar()">
-      {{ txtBtnSim }}
-    </button>
-  </div>
-
+	<div class="modal-footer">
+		<button *ngIf="!esconderCampoNao" type="button" class="btn btn-default" (click)="fecharModal()">
+			{{ txtBtnNao }}
+		</button>
+		<button *ngIf="!esconderCampoSim" type="button" class="btn btn-success" (click)="confirmar()">
+			{{ txtBtnSim }}
+		</button>
+	</div>
 </ng-template>

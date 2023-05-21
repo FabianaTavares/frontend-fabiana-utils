@@ -5,67 +5,60 @@ import { Subscription } from 'rxjs';
 import { AbaModel } from '../model/aba.model';
 
 @Component({
-  selector: 'app-item-aba',
-  templateUrl: './item-aba.component.html',
-  styleUrls: ['./item-aba.component.scss']
+	selector: 'app-item-aba',
+	templateUrl: './item-aba.component.html',
+	styleUrls: ['./item-aba.component.scss']
 })
 export class ItemAbaComponent implements OnInit, OnDestroy, OnChanges {
+	@Input() aba: AbaModel;
 
-  @Input() aba: AbaModel;
+	rotaSubscription: Subscription;
+	statusAtualReq: SimNaoEnum;
+	rotaAtiva: false;
 
-  rotaSubscription: Subscription;
-  statusAtualReq: SimNaoEnum;
-  rotaAtiva: false;
+	constructor(private router: Router, private route: ActivatedRoute) {}
 
+	ngOnInit(): void {
+		this.verificarEstado();
+		this.cadastrarEventos();
+		this.verificarAba(this.route.firstChild.routeConfig.path);
+	}
 
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-  ) { }
+	verificarEstado() {
+		if (this.aba) {
+			this.aba.exibirAba = this.aba.exibirAba == null || this.aba.exibirAba === undefined ? true : this.aba.exibirAba;
+			this.aba.bloqueada = this.aba.bloqueada == null || this.aba.bloqueada === undefined ? false : this.aba.bloqueada;
+		}
+	}
 
-  ngOnInit(): void {
-    this.verificarEstado();
-    this.cadastrarEventos();
-    this.verificarAba(this.route.firstChild.routeConfig.path);
-  }
+	cadastrarEventos() {
+		this.rotaSubscription = this.router.events.subscribe(evento => {
+			if (evento instanceof NavigationStart) {
+				this.verificarAba(evento.url);
+			}
+		});
+	}
 
-  verificarEstado() {
-    if (this.aba) {
-      this.aba.exibirAba = (this.aba.exibirAba == null || this.aba.exibirAba === undefined) ? true : this.aba.exibirAba;
-      this.aba.bloqueada = (this.aba.bloqueada == null || this.aba.bloqueada === undefined) ? false : this.aba.bloqueada;
-    }
-  }
+	verificarAba(url = '') {
+		if (this.aba) {
+			this.aba.ativa = url.includes(this.aba.url);
+		}
+	}
 
-  cadastrarEventos() {
-    this.rotaSubscription = this.router.events.subscribe(evento => {
-      if (evento instanceof NavigationStart) {
-        this.verificarAba(evento.url);
-      }
-    });
-  }
+	ngOnChanges(changes: SimpleChanges): void {
+		if (changes && changes.aba) {
+			this.verificarAba(this.route.firstChild.routeConfig.path);
+			this.verificarEstado();
+		}
+	}
 
-  verificarAba(url = '') {
-    if (this.aba) {
-      this.aba.ativa = url.includes(this.aba.url);
-    }
-  }
+	ngOnDestroy() {
+		this.rotaSubscription.unsubscribe();
+	}
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes && changes.aba) {
-
-      this.verificarAba(this.route.firstChild.routeConfig.path);
-      this.verificarEstado();
-    }
-  }
-
-  ngOnDestroy() {
-    this.rotaSubscription.unsubscribe();
-  }
-
-  direcionarAba() {
-    if (this.aba && this.aba.url && !this.aba.bloqueada) {
-      this.router.navigate([this.aba.url], { relativeTo: this.route });
-    }
-  }
-
+	direcionarAba() {
+		if (this.aba && this.aba.url && !this.aba.bloqueada) {
+			this.router.navigate([this.aba.url], { relativeTo: this.route });
+		}
+	}
 }

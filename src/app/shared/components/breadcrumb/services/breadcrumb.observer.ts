@@ -1,11 +1,11 @@
 import { Subject } from 'rxjs';
 
 export class BreadcrumbObserver {
-  private listarRotasEvt: Subject<string> = new Subject<string>();
+	private listarRotasEvt: Subject<string> = new Subject<string>();
 
-  $listarRotas = this.listarRotasEvt.asObservable();
+	$listarRotas = this.listarRotasEvt.asObservable();
 
-  listarRotas() {
-    this.listarRotasEvt.next(null);
-  }
+	listarRotas() {
+		this.listarRotasEvt.next(null);
+	}
 }

@@ -9,16 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ComponentsModule } from 'src/app/shared/components/components.module';
 
 @NgModule({
-  declarations: [
-    HomeComponent,
-    LoginComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    PublicRoutingModule,
-    ReactiveFormsModule,
-    ComponentsModule
-  ],
+	declarations: [HomeComponent, LoginComponent],
+	imports: [CommonModule, RouterModule, PublicRoutingModule, ReactiveFormsModule, ComponentsModule]
 })
 export class PublicModule {}
