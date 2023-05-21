@@ -1,7 +1,8 @@
-import { Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Subject } from 'rxjs';
 import { filter } from 'rxjs/operators';
+
 import { ParametroRotaEnum } from '../../models/enum/parametro-rota.enum';
 
 @Injectable({
@@ -33,7 +34,7 @@ export class IdRecuperarService {
 		}
 	}
 
-	recuperarParametro(parametro: ParametroRotaEnum, actRouter?: ActivatedRoute) {
+	recuperarParametro(parametro: ParametroRotaEnum, actRouter?: ActivatedRoute): ActivatedRoute {
 		const rotaSelecionada = actRouter ? actRouter : this.activatedRoute;
 		if (rotaSelecionada && rotaSelecionada.children && rotaSelecionada.children.length) {
 			const actRouterAtual = rotaSelecionada.children.find(router => router.snapshot.params[parametro]);
@@ -43,7 +44,7 @@ export class IdRecuperarService {
 		}
 	}
 
-	recuperarRouterData(dataNome: ParametroRotaEnum, actRouter?: ActivatedRoute) {
+	recuperarRouterData(dataNome: ParametroRotaEnum, actRouter?: ActivatedRoute): ActivatedRoute {
 		const rotaSelecionada = actRouter ? actRouter : this.activatedRoute;
 		if (rotaSelecionada && rotaSelecionada.children.length) {
 			const actRouterAtual = rotaSelecionada.snapshot.params[dataNome]

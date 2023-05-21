@@ -1,5 +1,5 @@
 export const ValidacaoUtils = {
-	validaCpf: cpf => {
+	validaCpf: (cpf: string): boolean => {
 		if (!cpf) {
 			return false;
 		}
@@ -43,7 +43,7 @@ export const ValidacaoUtils = {
 		}
 	},
 
-	validaCnpj: cnpj => {
+	validaCnpj: (cnpj: string): boolean => {
 		if (!cnpj) {
 			return false;
 		}

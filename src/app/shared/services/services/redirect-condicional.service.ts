@@ -1,16 +1,16 @@
-import { AtivoInativoEnum } from './../../models/enum/ativo-inativo.enum';
-import { RedirecionamentoModel } from './../../models/interface/redirecionamento.model';
-import { ReqResultModel } from './../../models/interface/req-result.model';
-import { MsgSystemEnum } from './../../models/enum/msg-system.enum';
-import { ToastrService } from 'ngx-toastr';
-import { AuthService } from './../../../core/auth/auth.service';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { RedirecionamentoPadraoModel } from '../../models/interface/redirecionamento-padrao.model';
-import { TipoRedirecionamentoEnum } from '../../models/enum/tipo-redirecionamento.enum';
-import { PerfilEnum } from '../../models/enum/perfil.enum';
-import { TipoReqEnum } from '../../models/enum/tipo-req.enum';
+import { ToastrService } from 'ngx-toastr';
 import { SecurityService } from 'src/app/core/auth/security.service';
+
+import { PerfilEnum } from '../../models/enum/perfil.enum';
+import { TipoRedirecionamentoEnum } from '../../models/enum/tipo-redirecionamento.enum';
+import { TipoReqEnum } from '../../models/enum/tipo-req.enum';
+import { RedirecionamentoPadraoModel } from '../../models/interface/redirecionamento-padrao.model';
+import { AuthService } from './../../../core/auth/auth.service';
+import { MsgSystemEnum } from './../../models/enum/msg-system.enum';
+import { RedirecionamentoModel } from './../../models/interface/redirecionamento.model';
+import { ReqResultModel } from './../../models/interface/req-result.model';
 import { ReqService } from './req.service';
 
 export interface RedirectOpcoes {
@@ -57,8 +57,9 @@ export class RedirectCondicionalService {
 		return '/requerimentos';
 	}
 
-	private consultarAnalise(idreq: number) {
+	private consultarAnalise(idreq: number): boolean {
 		//return this.analiseReqService.getInfoAnalise(idreq).toPromise();
+		console.log(idreq);
 		return true;
 	}
 
@@ -80,7 +81,7 @@ export class RedirectCondicionalService {
 		return opcoes;
 	}
 
-	async direcionarReq(req: ReqResultModel, opcoes?: RedirectOpcoes) {
+	async direcionarReq(req: ReqResultModel, opcoes?: RedirectOpcoes): Promise<string> {
 		opcoes = this.recuperarOpcaoPadrao(opcoes);
 		const rotaBase = this.rotaBasePorTipo(<TipoReqEnum>req.tipo);
 		const redirectModelo: RedirecionamentoModel = {
@@ -93,7 +94,7 @@ export class RedirectCondicionalService {
 		}
 		if (opcoes.consultarAnalise) {
 			//  redirectModelo.req = await this.consultarAnalise(req.id).catch(() => {
-			return null;
+			return '';
 			//});
 		}
 
@@ -116,13 +117,13 @@ export class RedirectCondicionalService {
 		}
 	}
 
-	direcionarRequerimentoPorId(idReq: number, opcoes?: RedirectOpcoes) {
+	direcionarRequerimentoPorId(idReq: number, opcoes?: RedirectOpcoes): void {
 		this.reqService.getInfoBasicas(idReq).subscribe(info =>
 			this.direcionarReq(
 				{
 					id: idReq,
 					status: info.status,
-					tipo: info.tipoReq,
+					tipo: info.tipo,
 					data: info.data
 				},
 				this.recuperarOpcaoPadrao(opcoes)

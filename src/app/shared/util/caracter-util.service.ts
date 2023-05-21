@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 	providedIn: 'root'
 })
 export class CaracterUtilService {
-	removeCaracterCurrency(valorFormatado): number {
+	removeCaracterCurrency(valorFormatado: string): number {
 		if (valorFormatado && valorFormatado.length > 0) {
 			return parseInt(valorFormatado.replace(/[\\.,]/g, '')) / 100.0;
 		} else {

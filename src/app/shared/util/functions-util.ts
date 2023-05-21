@@ -37,7 +37,7 @@ export function divideNumberTel(numero: string): [string, string] {
 	return [null, null];
 }
 
-export function httpParamsByObjeto(objeto: Object): {
+export function httpParamsByObjeto(objeto: ): {
 	[param: string]: string | string[];
 } {
 	const httpParams: {
@@ -45,7 +45,7 @@ export function httpParamsByObjeto(objeto: Object): {
 	} = {};
 	if (objeto != null) {
 		for (const key in objeto) {
-			if (objeto.hasOwnProperty(key)) {
+			if (objeto.prototype.hasOwnProperty(key)) {
 				const parametro = objeto[key];
 				if (parametro != null) {
 					if (String(parametro).trim()) {

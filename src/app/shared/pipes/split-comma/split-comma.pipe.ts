@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 	name: 'splitComma'
 })
 export class SplitCommaPipe implements PipeTransform {
-	transform(value: string, limit = 25, completeWords = false, ellipsis = '...') {
+	transform(value: string, limit: number = 25, completeWords: boolean = false, ellipsis: string = '...'): string {
 		if (completeWords) {
 			limit = value.substr(0, limit).lastIndexOf(' ');
 		}
