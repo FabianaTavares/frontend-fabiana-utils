@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/FabianaTavares/fabiana-utils/compare/v0.4.0...v0.5.0) (2023-05-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* aplicando eslint e prettier no código
+
+### Funcionalidades
+
+* migrando tslint para eslint ([e6673e5](https://github.com/FabianaTavares/fabiana-utils/commit/e6673e5d91671f1b3897b2bf54db2f5fe8d97ce9))
+
+
+* aplicando eslint e prettier no código ([24a1ed2](https://github.com/FabianaTavares/fabiana-utils/commit/24a1ed2ddaef3df65935189c945b9ba41122462d))
+
 ## [0.4.0](https://github.com/FabianaTavares/fabiana-utils/compare/v0.3.1...v0.4.0) (2023-05-19)
 
 
